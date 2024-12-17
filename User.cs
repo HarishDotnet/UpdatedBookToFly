@@ -45,7 +45,7 @@ namespace HomePage
                             option.BookTicket(FlightType);
                             break;
                         case 4:
-                            Console.WriteLine("\nI am in devolpment stage come back later... :)");
+                            option.showTicket();
                             break;
                         case 5:
                             Console.WriteLine("\nLog out successfully...!");
@@ -110,46 +110,7 @@ namespace HomePage
 //                         break;
 //                 }
 //             }
-
-//         }
-//     }
-
-
-
-//     static void BookTicket()
-//     {
-//         Console.WriteLine("\n--- Book Ticket ---");
-//         Console.WriteLine("1. Local Ticket");
-//         Console.WriteLine("2. International Ticket");
-//         Console.Write("Choose your ticket type: ");
-//         string ticketTypeChoice = Console.ReadLine();
-
-//         if (ticketTypeChoice == "1")
-//         {
-//             Console.WriteLine("You selected Local Ticket.");
-//             Console.Write("Enter Passenger Name: ");
-//             string passengerName = Console.ReadLine();
-//             Console.WriteLine("Your Local Ticket has been booked successfully!");
-//             bookedTickets[bookingIdCounter] = $"Booking ID: {bookingIdCounter} | Passenger: {passengerName} | Type: Local Ticket";
-//             Console.WriteLine($"Your Booking ID is: {bookingIdCounter}");
-//             bookingIdCounter++;
-//         }
-//         else if (ticketTypeChoice == "2")
-//         {
-//             Console.WriteLine("You selected International Ticket.");
-//             Console.Write("Enter Passenger Name: ");
-//             string passengerName = Console.ReadLine();
-//             Console.WriteLine("Your International Ticket has been booked successfully!");
-//             bookedTickets[bookingIdCounter] = $"Booking ID: {bookingIdCounter} | Passenger: {passengerName} | Type: International Ticket";
-//             Console.WriteLine($"Your Booking ID is: {bookingIdCounter}");
-//             bookingIdCounter++;
-//         }
-//         else
-//         {
-//             Console.WriteLine("Invalid choice! Returning to main menu.");
-//         }
-//     }
-
+// }
 //     static void PreviewTicket()
 //     {
 //         Console.WriteLine("\n--- Preview Ticket ---");

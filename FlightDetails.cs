@@ -13,8 +13,13 @@ namespace HomePage
         public string Time { get; set; }
         public int Price { get; set; }
         public int SeatAvailability { get; set; }
-    }
 
+        public override string ToString()
+        {
+            // return $"{$"Flight Number: {FlightNumber}", 0}| {$"Name: {FlightName}",-10} | From: {From} | To: {To} | Time: {Time} | Price: {Price} Rs. | No.Of.Seats: {SeatAvailability}";
+            return $"|  {FlightNumber,-12}|    {FlightName,-15}|    {From,-15}|    {To,-15}|    {Time,-10}| {Price,8} | {SeatAvailability,5} |";
+        }
+    }
     internal class InternationalFlights : AbstractFlightDetails
     {
         public InternationalFlights()

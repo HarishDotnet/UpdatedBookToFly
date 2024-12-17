@@ -11,8 +11,9 @@ namespace HomePage
         
         static void Main(string [] agrs){
             UserOptions u=new UserOptions();
-            AbstractFlightDetails ft=u.SelectFlightType();
-            u.BookTicket(ft);
+            // AbstractFlightDetails ft=u.SelectFlightType();
+            u.ShowFlightDetails(new LocalFlights());
+            // u.BookTicket(ft);
             
         //     try{
         //         throw new NullField("Confirm Password should not be Null");
