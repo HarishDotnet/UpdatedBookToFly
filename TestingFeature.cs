@@ -9,7 +9,10 @@ namespace HomePage
     public class TestingFeature
     {
         
-        // static void Main(string [] agrs){
+        static void Main(string [] agrs){
+            UserOptions u=new UserOptions();
+            AbstractFlightDetails ft=u.SelectFlightType();
+            u.BookTicket(ft);
             
         //     try{
         //         throw new NullField("Confirm Password should not be Null");
@@ -35,6 +38,6 @@ namespace HomePage
         //     lf=new InternationalFlights();
         //     lf.ShowFlightDetails();
         //     */
-        // }
+        }
     }
 }

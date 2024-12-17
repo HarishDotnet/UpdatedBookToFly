@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Text.Json;
 using ConsoleTextFormat;
+using HomePage.FlightBooking;
 
 namespace HomePage
 {
@@ -50,9 +48,9 @@ namespace HomePage
                 Thread.Sleep(100);
             }
         }
-        private void GetFlight(string source, string destination, AbstractFlightDetails FlightType)
+        private bool GetFlight(string source, string destination, AbstractFlightDetails FlightType)
         {
-            bool notFound = true;
+            bool found = false;
             foreach (var flight in FlightType.flights)
             {
                 string flightSource = flight.From.ToLower();
@@ -60,33 +58,40 @@ namespace HomePage
                 if (flightSource.Equals(source) && flightDestination.Equals(destination))
                 {
                     Console.WriteLine($"Flight: {flight.FlightNumber} | Name: {flight.FlightName} | From: {flight.From} | To: {flight.To} | Time: {flight.Time} | Price: {flight.Price} Rs. | Seats Available: {flight.SeatAvailability}");
-                    notFound = false;
+                    found = true;
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(50);
             }
-            if (notFound)
-                Console.WriteLine($"{Fmt.fgRed}{source} to {destination} Flight not Available. Sorry for inconvenience{Fmt.fgRed}");
+            if (!found)
+                Console.WriteLine($"{Fmt.fgRed}{source} to {destination} Flight not Available. Sorry for inconvenience{Fmt.fgWhi}");
+            return found;
         }
-        public void SearchFlight(AbstractFlightDetails FlightType)
+        public bool SearchFlight(AbstractFlightDetails FlightType)
         {
             Console.Write("Enter source: ");
             string source = Console.ReadLine().ToLower();
             Console.Write("Enter destination: ");
             string destination = Console.ReadLine().ToLower();
-            this.GetFlight(source, destination, FlightType);
+            return this.GetFlight(source, destination, FlightType);
         }
 
         public void BookTicket(AbstractFlightDetails FlightType)
         {
             Console.Write("Enter Passenger Name: ");
-            string passengerName = Console.ReadLine();
+            string? passengerName = Console.ReadLine();
 
             Console.Write("Enter Passenger Age: ");
             byte age=input.getAge();
             
             Console.WriteLine("Enter your date of journey (dd/MM/yyyy):");
             string date=input.getDate();
-
+            bool doAgain=false;
+            do{
+                doAgain=false;
+                this.SearchFlight(FlightType);
+                Console.WriteLine($"{Fmt.fgYel}\nAre You want to try diff source and destination? yes or no{Fmt.fgWhi}");
+                doAgain=Console.ReadLine().ToLower().Equals("yes")?true:false;
+            }while( doAgain);
             Console.WriteLine("Enter Flight Number:");
             string flightNumber=input.getFlightNumber(FlightType);
 
@@ -95,7 +100,7 @@ namespace HomePage
 
             bool isAvailable=checkSeatAvailability(flight);
             //add thread later
-            for(int i=0;i<4;i++){
+            for(int i=0;i<3;i++){
                 Console.Write(".");
                 Thread.Sleep(1000);
             }
@@ -109,8 +114,17 @@ namespace HomePage
             Console.WriteLine("Your Ticket has been booked successfully!");
             // bookedTickets[bookingIdCounter] = $"Booking ID: {bookingIdCounter} | Passenger: {passengerName} | Type: Local Ticket";
             Console.WriteLine($"Your Booking ID is: {bookingId}");
+            addBookingInfo(bookingId,new Booking(passengerName,age,flightNumber,date,bookingId));
         }
 
+        static private void addBookingInfo(string bookingId,Booking bookingInfo){
+            string filePath = "BookingDetails.json"; // Path to your JSON file
+            string json = File.ReadAllText(filePath);
+            Dictionary<string,Booking> temp= JsonSerializer.Deserialize<Dictionary<string,Booking>>(json);
+            temp.Add(bookingId,bookingInfo);
+            json=JsonSerializer.Serialize(temp, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(filePath,json);
+        }
         
         public bool checkSeatAvailability(Flight flight){
                 if(flight.SeatAvailability<=0){
