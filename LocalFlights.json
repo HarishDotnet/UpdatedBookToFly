@@ -1,0 +1,101 @@
+[
+  {
+    "FlightNumber": "LF101",
+    "FlightName": "Air India",
+    "From": "Delhi",
+    "To": "Mumbai",
+    "Time": "9:00 AM",
+    "Price": 4500,
+    "SeatAvailability": 45
+  },
+  {
+    "FlightNumber": "LF102",
+    "FlightName": "IndiGo",
+    "From": "Bangalore",
+    "To": "Hyderabad",
+    "Time": "11:00 AM",
+    "Price": 3200,
+    "SeatAvailability": 30
+  },
+  {
+    "FlightNumber": "LF103",
+    "FlightName": "SpiceJet",
+    "From": "Chennai",
+    "To": "Kolkata",
+    "Time": "2:00 PM",
+    "Price": 4000,
+    "SeatAvailability": 25
+  },
+  {
+    "FlightNumber": "LF104",
+    "FlightName": "GoAir",
+    "From": "Pune",
+    "To": "Ahmedabad",
+    "Time": "6:30 PM",
+    "Price": 2800,
+    "SeatAvailability": 40
+  },
+  {
+    "FlightNumber": "LF105",
+    "FlightName": "Vistara",
+    "From": "Delhi",
+    "To": "Lucknow",
+    "Time": "8:45 AM",
+    "Price": 2400,
+    "SeatAvailability": 20
+  },
+  {
+    "FlightNumber": "LF106",
+    "FlightName": "AirAsia",
+    "From": "Mumbai",
+    "To": "Goa",
+    "Time": "4:00 PM",
+    "Price": 3500,
+    "SeatAvailability": 35
+  },
+  {
+    "FlightNumber": "LF107",
+    "FlightName": "Alliance Air",
+    "From": "Kochi",
+    "To": "Trivandrum",
+    "Time": "10:30 AM",
+    "Price": 1500,
+    "SeatAvailability": 10
+  },
+  {
+    "FlightNumber": "LF108",
+    "FlightName": "TruJet",
+    "From": "Jaipur",
+    "To": "Udaipur",
+    "Time": "3:00 PM",
+    "Price": 2000,
+    "SeatAvailability": 15
+  },
+  {
+    "FlightNumber": "LF109",
+    "FlightName": "Star Air",
+    "From": "Bhopal",
+    "To": "Indore",
+    "Time": "12:00 PM",
+    "Price": 1800,
+    "SeatAvailability": 5
+  },
+  {
+    "FlightNumber": "LF110",
+    "FlightName": "Akasa Air",
+    "From": "Nagpur",
+    "To": "Raipur",
+    "Time": "5:15 PM",
+    "Price": 2200,
+    "SeatAvailability": 50
+  },
+  {
+    "FlightNumber": "LF111",
+    "FlightName": "HarishFly",
+    "From": "Erode",
+    "To": "Rameshwaram",
+    "Time": "8:45 PM",
+    "Price": 1000,
+    "SeatAvailability": 8
+  }
+]

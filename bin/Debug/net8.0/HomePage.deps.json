@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "HomePage/1.0.0": {
+        "dependencies": {
+          "ConsoleTextFormat": "1.2.4"
+        },
+        "runtime": {
+          "HomePage.dll": {}
+        }
+      },
+      "ConsoleTextFormat/1.2.4": {
+        "runtime": {
+          "lib/net8.0/ConsoleTextFormat.dll": {
+            "assemblyVersion": "1.2.4.0",
+            "fileVersion": "1.2.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HomePage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConsoleTextFormat/1.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xaBlM3YEYIa8ZGCg781zRI/lQWcFomwf/1zPMP9uGktFnO74JeDdqeo4xk0yG8ZwkyaUNeEeDdMwfiw7XTgJ1A==",
+      "path": "consoletextformat/1.2.4",
+      "hashPath": "consoletextformat.1.2.4.nupkg.sha512"
+    }
+  }
+}

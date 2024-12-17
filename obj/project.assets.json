@@ -1,0 +1,113 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "ConsoleTextFormat/1.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/ConsoleTextFormat.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/ConsoleTextFormat.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net8.0/consoleformat.png": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleTextFormat/1.2.4": {
+      "sha512": "xaBlM3YEYIa8ZGCg781zRI/lQWcFomwf/1zPMP9uGktFnO74JeDdqeo4xk0yG8ZwkyaUNeEeDdMwfiw7XTgJ1A==",
+      "type": "package",
+      "path": "consoletextformat/1.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "consoletextformat.1.2.4.nupkg.sha512",
+        "consoletextformat.nuspec",
+        "content/consoleformat.png",
+        "contentFiles/any/net8.0/consoleformat.png",
+        "lib/net8.0/ConsoleTextFormat.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "ConsoleTextFormat >= 1.2.4"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\harish.muthu\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\HomePage.csproj",
+      "projectName": "HomePage",
+      "projectPath": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\HomePage.csproj",
+      "packagesPath": "C:\\Users\\harish.muthu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\harish.muthu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "ConsoleTextFormat": {
+            "target": "Package",
+            "version": "[1.2.4, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

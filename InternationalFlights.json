@@ -1,0 +1,182 @@
+[
+    {
+        "FlightNumber": "IF101",
+        "FlightName": "Skyline Airways",
+        "From": "New York",
+        "To": "Los Angeles",
+        "Time": "10:00 AM",
+        "Price": 30000,
+        "SeatAvailability": 75
+    },
+    {
+        "FlightNumber": "IF102",
+        "FlightName": "Oceanic Airlines",
+        "From": "London",
+        "To": "Paris",
+        "Time": "1:00 PM",
+        "Price": 15000,
+        "SeatAvailability": 50
+    },
+    {
+        "FlightNumber": "IF103",
+        "FlightName": "Aussie Express",
+        "From": "Sydney",
+        "To": "Melbourne",
+        "Time": "5:00 PM",
+        "Price": 10000,
+        "SeatAvailability": 90
+    },
+    {
+        "FlightNumber": "IF104",
+        "FlightName": "Desert Eagle",
+        "From": "Mumbai",
+        "To": "Dubai",
+        "Time": "8:00 PM",
+        "Price": 40000,
+        "SeatAvailability": 60
+    },
+    {
+        "FlightNumber": "IF105",
+        "FlightName": "Eastern Wings",
+        "From": "Tokyo",
+        "To": "Seoul",
+        "Time": "6:30 AM",
+        "Price": 20000,
+        "SeatAvailability": 45
+    },
+    {
+        "FlightNumber": "IF106",
+        "FlightName": "Pacific Breeze",
+        "From": "San Francisco",
+        "To": "Honolulu",
+        "Time": "4:15 PM",
+        "Price": 35000,
+        "SeatAvailability": 80
+    },
+    {
+        "FlightNumber": "IF107",
+        "FlightName": "EuroConnect",
+        "From": "Berlin",
+        "To": "Amsterdam",
+        "Time": "11:15 AM",
+        "Price": 12000,
+        "SeatAvailability": 30
+    },
+    {
+        "FlightNumber": "IF108",
+        "FlightName": "Golden Route",
+        "From": "Singapore",
+        "To": "Bangkok",
+        "Time": "3:20 PM",
+        "Price": 18000,
+        "SeatAvailability": 55
+    },
+    {
+        "FlightNumber": "IF109",
+        "FlightName": "Polar Air",
+        "From": "Reykjavik",
+        "To": "Oslo",
+        "Time": "6:00 AM",
+        "Price": 25000,
+        "SeatAvailability": 25
+    },
+    {
+        "FlightNumber": "IF110",
+        "FlightName": "TransAtlantic",
+        "From": "Miami",
+        "To": "London",
+        "Time": "9:30 PM",
+        "Price": 55000,
+        "SeatAvailability": 95
+    },
+    {
+        "FlightNumber": "IF111",
+        "FlightName": "Arctic Wings",
+        "From": "Anchorage",
+        "To": "Seattle",
+        "Time": "7:45 AM",
+        "Price": 22000,
+        "SeatAvailability": 40
+    },
+    {
+        "FlightNumber": "IF112",
+        "FlightName": "Southern Comfort",
+        "From": "Cape Town",
+        "To": "Johannesburg",
+        "Time": "12:30 PM",
+        "Price": 18000,
+        "SeatAvailability": 65
+    },
+    {
+        "FlightNumber": "IF113",
+        "FlightName": "Silk Route Express",
+        "From": "Beijing",
+        "To": "Shanghai",
+        "Time": "3:00 PM",
+        "Price": 12000,
+        "SeatAvailability": 85
+    },
+    {
+        "FlightNumber": "IF114",
+        "FlightName": "Blue Skyways",
+        "From": "Mexico City",
+        "To": "Toronto",
+        "Time": "8:00 AM",
+        "Price": 45000,
+        "SeatAvailability": 70
+    },
+    {
+        "FlightNumber": "IF115",
+        "FlightName": "Tropic Breeze",
+        "From": "Rio de Janeiro",
+        "To": "Buenos Aires",
+        "Time": "2:20 PM",
+        "Price": 23000,
+        "SeatAvailability": 35
+    },
+    {
+        "FlightNumber": "IF116",
+        "FlightName": "Northern Star",
+        "From": "Moscow",
+        "To": "Saint Petersburg",
+        "Time": "6:15 PM",
+        "Price": 13000,
+        "SeatAvailability": 50
+    },
+    {
+        "FlightNumber": "IF117",
+        "FlightName": "Safari Wings",
+        "From": "Nairobi",
+        "To": "Addis Ababa",
+        "Time": "10:30 AM",
+        "Price": 32000,
+        "SeatAvailability": 75
+    },
+    {
+        "FlightNumber": "IF118",
+        "FlightName": "Outback Express",
+        "From": "Perth",
+        "To": "Darwin",
+        "Time": "8:40 AM",
+        "Price": 40000,
+        "SeatAvailability": 55
+    },
+    {
+        "FlightNumber": "IF119",
+        "FlightName": "Aurora Line",
+        "From": "Helsinki",
+        "To": "Stockholm",
+        "Time": "11:50 AM",
+        "Price": 14000,
+        "SeatAvailability": 45
+    },
+    {
+        "FlightNumber": "IF120",
+        "FlightName": "Coastal Airways",
+        "From": "Los Angeles",
+        "To": "San Diego",
+        "Time": "5:30 PM",
+        "Price": 10000,
+        "SeatAvailability": 60
+    }
+]
