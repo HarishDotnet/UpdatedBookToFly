@@ -9,10 +9,10 @@ namespace HomePage
     public class TestingFeature
     {
         
-        static void Main(string [] agrs){
-            UserOptions u=new UserOptions();
-            // AbstractFlightDetails ft=u.SelectFlightType();
-            u.ShowFlightDetails(new LocalFlights());
+        // static void Main(string [] agrs){
+        //     UserOptions u=new UserOptions();
+        //     // AbstractFlightDetails ft=u.SelectFlightType();
+        //     u.ShowFlightDetails(new LocalFlights());
             // u.BookTicket(ft);
             
         //     try{
@@ -39,6 +39,6 @@ namespace HomePage
         //     lf=new InternationalFlights();
         //     lf.ShowFlightDetails();
         //     */
-        }
+        // }
     }
 }
