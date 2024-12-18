@@ -1,12 +1,9 @@
 using System.Text.Json;
 using ConsoleTextFormat;
-using HomePage.FlightBooking;
-
 namespace HomePage
 {
     public class UserOptions
     {
-        static int bookingIdCounter = 1;
         Input input = new Input();
         public AbstractFlightDetails SelectFlightType()
         {
@@ -33,11 +30,8 @@ namespace HomePage
 
         public void ShowFlightDetails(AbstractFlightDetails FlightType)
         {
-            
-
-
             Console.WriteLine($"\n\t\t\t\t\t\t{Fmt.fgMag}--- Available Flights ---{Fmt.fgGre}\n");
-            for(int i=0;i<110;i++){ Console.Write("-");Thread.Sleep(10);};
+            for(int i=0;i<110;i++){ Console.Write("-");Thread.Sleep(5);};
             Console.WriteLine("\n|  Flight No   |    Flight Name    |        From        |        To        |     Time     | Price Rs | Seats |");
             for(int i=0;i<110;i++){ Console.Write("-");Thread.Sleep(10);};
             Console.WriteLine(Fmt.fgWhi);
@@ -48,6 +42,7 @@ namespace HomePage
                 Thread.Sleep(100);
             }
         }
+
         private bool GetFlight(string source, string destination, AbstractFlightDetails FlightType)
         {
             bool found = false;
@@ -75,7 +70,7 @@ namespace HomePage
             return this.GetFlight(source!, destination!, FlightType);
         }
 
-        public void BookTicket(AbstractFlightDetails FlightType)
+        internal void BookTicket(AbstractFlightDetails FlightType)
         {
             Console.Write("Enter Passenger Name: ");
             string? passengerName = Console.ReadLine();
@@ -98,30 +93,30 @@ namespace HomePage
             string flightNumber = input.getFlightNumber(FlightType);
 
             Flight flight = input.getFlightDetails(flightNumber, FlightType);
+            FlightType.flights.Remove(flight);
             Console.Write("Checking Seat Availablity Please wait");
-
+            
             bool isAvailable = checkSeatAvailability(flight);
             //add thread later
-            for (int i = 0; i < 3; i++)
-            {
-                Console.Write(".");
-                Thread.Sleep(1000);
-            }
+            for (int i = 0; i < 3; i++){Console.Write(".");Thread.Sleep(1000);}
             if (isAvailable)
             {
-
+                flight.SeatAvailability-=1;
+                FlightType.flights.Add(flight);
+                flight.addFlight(flight,FlightType);
             }
             else
             {
                 Console.WriteLine("Seat not Available Please Try Later...");
+                return;
             }
-            string bookingId = "BTF0" + bookingIdCounter;
+            string bookingId =input.getBookingid();
             Console.WriteLine($"{Fmt.fgGre}Your Ticket has been booked successfully!");
             // bookedTickets[bookingIdCounter] = $"Booking ID: {bookingIdCounter} | Passenger: {passengerName} | Type: Local Ticket";
             Console.WriteLine($"\t\t\t\t{Fmt.b}Your Booking ID is: {bookingId}{Fmt._b}{Fmt.fgWhi}");
             addBookingInfo(bookingId, new Booking(passengerName!, age, flightNumber, date, bookingId));
         }
-        static private void addBookingInfo(string bookingId, Booking bookingInfo)
+        private void addBookingInfo(string bookingId, Booking bookingInfo)
         {
             string filePath = "BookingDetails.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
@@ -131,11 +126,11 @@ namespace HomePage
             File.WriteAllText(filePath, json);
         }
 
-        internal void showTicket()
+        internal bool showTicket(string? bookingId)
         {
+            bool found=false;
             string filePath = "BookingDetails.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
-
             // Deserialize the JSON into a Dictionary
             Dictionary<string, Booking>? bookings;
             if (string.IsNullOrWhiteSpace(json))
@@ -144,8 +139,6 @@ namespace HomePage
                 bookings = JsonSerializer.Deserialize<Dictionary<string, Booking>>(json);
 
             // Ask user to input the Booking ID to search
-            Console.Write("Enter Booking ID to View: ");
-            string? bookingId = Console.ReadLine();
             if (bookings != null && bookings.ContainsKey(bookingId!))
             {
                 Booking booking = bookings[bookingId!];
@@ -161,10 +154,12 @@ namespace HomePage
             {
                 Console.WriteLine("Ticket not available.");
             }
+            return found;
         }
     
         public bool checkSeatAvailability(Flight flight)
         {
+            Console.WriteLine(flight.SeatAvailability);
             if (flight.SeatAvailability <= 0)
             {
                 return false;

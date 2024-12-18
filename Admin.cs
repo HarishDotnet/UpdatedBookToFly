@@ -1,5 +1,6 @@
 using Authenticator;
 using HomePage;
+using System.Text.Json;
 namespace Admin
 {
     public struct User
@@ -34,13 +35,8 @@ namespace Admin
                     this.go();
             }
         }
-
+       
     }
 }
 
-// for adding Flight Details
-
-            // List<Flight> temp=this.flights;
-            // temp.Add(new Flight{FlightNumber="LF111" ,FlightName="HarishFly",From = "Erode", To = "Rameshwaram", Time = "8:45 PM", Price = 1000 });
-            // string json = JsonSerializer.Serialize(flights, new JsonSerializerOptions { WriteIndented = true });
-            // File.WriteAllText("LocalFlights.json",json);
+           

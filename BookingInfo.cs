@@ -5,10 +5,6 @@ using System.Threading.Tasks;
 
 namespace HomePage
 {
-    using System;
-
-namespace FlightBooking
-{
     public struct Booking
     {
         // Properties
@@ -35,5 +31,5 @@ namespace FlightBooking
                    $"Flight Number: {FlightNumber}, Booking ID: {BookingId}";
         }
     }
-}
+
 }

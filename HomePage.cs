@@ -19,7 +19,7 @@ namespace HomePage
                 Console.WriteLine("2. Admin");
                 Console.WriteLine("3. GuestMode");
                 Console.WriteLine("4. Exit");
-                int choice = input.getValidChoice(1, 3);
+                int choice = input.getValidChoice(1, 4);
                 switch (choice)
                 {
                     case 1:

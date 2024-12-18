@@ -45,7 +45,9 @@ namespace HomePage
                             option.BookTicket(FlightType);
                             break;
                         case 4:
-                            option.showTicket();
+                            Console.Write("Enter Booking ID to View: ");
+                            string? bookingId = Console.ReadLine();
+                            option.showTicket(bookingId);
                             break;
                         case 5:
                             Console.WriteLine("\nLog out successfully...!");

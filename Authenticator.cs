@@ -44,12 +44,11 @@ namespace Authenticator
             switch (choice)
             {
                 case 1:
-                    this.SignUp();
-                    break;
+                    return this.SignUp();
                 case 2:
                     return this.Login();
             }
-            return true;
+            return false;
         }
         static string getMaskedPassword()
         {
@@ -164,7 +163,7 @@ namespace Authenticator
             }
             return newPassword;
         }
-        public void SignUp()
+        public bool SignUp()
         {
             Console.WriteLine($"\n\t\t{Fmt.b}{Fmt.fgGre}(: Welcome to BookToFly User SignUp Page :) {Fmt.fgWhi}{Fmt._b}");
             String userName = this.getUserName();
@@ -175,7 +174,7 @@ namespace Authenticator
             Thread.Sleep(2000);
             User user = new User(userName, password);
             this.userDetails.Add(user);
-            this.Begin();
+            return this.Begin();
         }
 
         public bool ValidUser(string username, string password, User user)
@@ -195,7 +194,7 @@ namespace Authenticator
             foreach (User user in this.userDetails)
             {
                 isUser = this.ValidUser(username, password, user);
-                if (isUser)
+                if(isUser)
                 {
                     Console.WriteLine($"\nWelcome ({user.username})");
                     return true;
@@ -203,9 +202,9 @@ namespace Authenticator
             }
             Console.WriteLine("\nIncorrect Credentials! \n Check your Username and Password and come back");
             if (new Input().isContinuepage("UserLogin"))
-                isUser = this.Login();
+                return this.Login();
 
-            return isUser;
+            return false;
         }
     }
 

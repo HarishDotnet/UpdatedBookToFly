@@ -6,6 +6,7 @@ namespace HomePage
 
     class Input
     {
+        static int bookingIdCounter = 1;
         public int getValidChoice(int start, int end)
         {
             Console.WriteLine("\nEnter your choice:");
@@ -59,6 +60,7 @@ namespace HomePage
             
             foreach(var flight in flights){
                 if(flight.FlightNumber.Equals(FlightNumber)){
+                    // flights.Remove(flight);
                     return flight;
                 }
             }
@@ -73,6 +75,28 @@ namespace HomePage
                 flight=getFlightDetails(FlightNumber,FlightType);
             }
             return FlightNumber;
+        }
+
+        bool isValidBookingId(string bookingId){
+            string filePath = "BookingDetails.json"; // Path to your JSON file
+            string json = File.ReadAllText(filePath);
+            // Deserialize the JSON into a Dictionary
+            Dictionary<string, Booking>? bookings;
+            if (string.IsNullOrWhiteSpace(json))
+                bookings = new Dictionary<string, Booking>(); // If empty file, use empty dictionary
+            else
+                bookings = JsonSerializer.Deserialize<Dictionary<string, Booking>>(json);
+
+            return bookings.ContainsKey(bookingId);
+
+        }
+        internal string getBookingid(){
+            string bookingId;
+            bookingId="BTF0"+bookingIdCounter++;
+            while(isValidBookingId(bookingId)){
+                bookingId="BTF0"+bookingIdCounter++;
+            }
+            return bookingId;
         }
     }
 }
