@@ -1725,9 +1725,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\HomePage.csproj",
-      "projectName": "HomePage",
-      "projectPath": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\HomePage.csproj",
+      "projectUniqueName": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\BookToFly.csproj",
+      "projectName": "BookToFly",
+      "projectPath": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\BookToFly.csproj",
       "packagesPath": "C:\\Users\\harish.muthu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\harish.muthu\\Desktop\\Flight Booking Console Aplication\\HomePage\\obj\\",
       "projectStyle": "PackageReference",
