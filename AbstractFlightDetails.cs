@@ -7,6 +7,6 @@ namespace HomePage
 {
     public abstract class AbstractFlightDetails
     {
-        internal List<Flight>? flights;
+        internal List<Flight> flights;
     }
 }

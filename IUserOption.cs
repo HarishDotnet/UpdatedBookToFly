@@ -7,10 +7,13 @@ namespace HomePage
 {
     public interface IUserOption 
     {
-        public IUserOption SelectFlightType(); 
-        public void BookTicket(AbstractFlightDetails FlightType);
+        public string BookTicket(AbstractFlightDetails FlightType);
 
-        public void SearchFlight(AbstractFlightDetails FlightType);
+        public AbstractFlightDetails SelectFlightType();
+        public bool SearchFlight(AbstractFlightDetails FlightType);
+        public void ShowFlightDetails(AbstractFlightDetails FlightType);
+
+        public bool showTicket(string bookingId);
     }
 
 }

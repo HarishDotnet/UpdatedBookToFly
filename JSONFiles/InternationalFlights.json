@@ -9,15 +9,6 @@
     "SeatAvailability": 75
   },
   {
-    "FlightNumber": "IF102",
-    "FlightName": "Oceanic Airlines",
-    "From": "London",
-    "To": "Paris",
-    "Time": "1:00 PM",
-    "Price": 15000,
-    "SeatAvailability": 50
-  },
-  {
     "FlightNumber": "IF103",
     "FlightName": "Aussie Express",
     "From": "Sydney",
@@ -27,24 +18,6 @@
     "SeatAvailability": 90
   },
   {
-    "FlightNumber": "IF104",
-    "FlightName": "Desert Eagle",
-    "From": "Mumbai",
-    "To": "Dubai",
-    "Time": "8:00 PM",
-    "Price": 40000,
-    "SeatAvailability": 60
-  },
-  {
-    "FlightNumber": "IF105",
-    "FlightName": "Eastern Wings",
-    "From": "Tokyo",
-    "To": "Seoul",
-    "Time": "6:30 AM",
-    "Price": 20000,
-    "SeatAvailability": 45
-  },
-  {
     "FlightNumber": "IF106",
     "FlightName": "Pacific Breeze",
     "From": "San Francisco",
@@ -52,15 +25,6 @@
     "Time": "4:15 PM",
     "Price": 35000,
     "SeatAvailability": 80
-  },
-  {
-    "FlightNumber": "IF107",
-    "FlightName": "EuroConnect",
-    "From": "Berlin",
-    "To": "Amsterdam",
-    "Time": "11:15 AM",
-    "Price": 12000,
-    "SeatAvailability": 30
   },
   {
     "FlightNumber": "IF108",
@@ -79,15 +43,6 @@
     "Time": "6:00 AM",
     "Price": 25000,
     "SeatAvailability": 25
-  },
-  {
-    "FlightNumber": "IF110",
-    "FlightName": "TransAtlantic",
-    "From": "Miami",
-    "To": "London",
-    "Time": "9:30 PM",
-    "Price": 55000,
-    "SeatAvailability": 95
   },
   {
     "FlightNumber": "IF111",
@@ -135,15 +90,6 @@
     "SeatAvailability": 50
   },
   {
-    "FlightNumber": "IF117",
-    "FlightName": "Safari Wings",
-    "From": "Nairobi",
-    "To": "Addis Ababa",
-    "Time": "10:30 AM",
-    "Price": 32000,
-    "SeatAvailability": 75
-  },
-  {
     "FlightNumber": "IF118",
     "FlightName": "Outback Express",
     "From": "Perth",
@@ -151,15 +97,6 @@
     "Time": "8:40 AM",
     "Price": 40000,
     "SeatAvailability": 55
-  },
-  {
-    "FlightNumber": "IF119",
-    "FlightName": "Aurora Line",
-    "From": "Helsinki",
-    "To": "Stockholm",
-    "Time": "11:50 AM",
-    "Price": 14000,
-    "SeatAvailability": 45
   },
   {
     "FlightNumber": "IF120",
@@ -178,5 +115,68 @@
     "Time": "8:00 AM",
     "Price": 45000,
     "SeatAvailability": 69
+  },
+  {
+    "FlightNumber": "IF105",
+    "FlightName": "Eastern Wings",
+    "From": "Tokyo",
+    "To": "Seoul",
+    "Time": "6:30 AM",
+    "Price": 20000,
+    "SeatAvailability": 44
+  },
+  {
+    "FlightNumber": "IF107",
+    "FlightName": "EuroConnect",
+    "From": "Ukraine",
+    "To": "Amsterdam",
+    "Time": "11:15 AM",
+    "Price": 12000,
+    "SeatAvailability": 30
+  },
+  {
+    "FlightNumber": "IF117",
+    "FlightName": "Safari Wings",
+    "From": "Nairobi",
+    "To": "Addis Ababa",
+    "Time": "10:30 AM",
+    "Price": 32000,
+    "SeatAvailability": 74
+  },
+  {
+    "FlightNumber": "IF102",
+    "FlightName": "Oceanic Airlines",
+    "From": "London",
+    "To": "Paris",
+    "Time": "1:00 PM",
+    "Price": 15000,
+    "SeatAvailability": 48
+  },
+  {
+    "FlightNumber": "IF119",
+    "FlightName": "Aurora Line",
+    "From": "Helsinki",
+    "To": "Stockholm",
+    "Time": "11:50 AM",
+    "Price": 14000,
+    "SeatAvailability": 44
+  },
+  {
+    "FlightNumber": "IF110",
+    "FlightName": "TransAtlantic",
+    "From": "Miami",
+    "To": "London",
+    "Time": "9:30 PM",
+    "Price": 55000,
+    "SeatAvailability": 87
+  },
+  {
+    "FlightNumber": "IF104",
+    "FlightName": "Desert Eagle",
+    "From": "Mumbai",
+    "To": "Dubai",
+    "Time": "8:00 PM",
+    "Price": 40000,
+    "SeatAvailability": 59
   }
 ]

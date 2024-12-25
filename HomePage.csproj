@@ -5,11 +5,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>HomePage</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\harish.muthu\.nuget\packages\consoletextformat\1.2.4\contentFiles\any\net8.0\consoleformat.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ConsoleTextFormat" Version="1.2.4" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
   </ItemGroup>
 
 </Project>

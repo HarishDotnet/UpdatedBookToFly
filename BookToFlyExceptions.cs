@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 namespace BookToFlyExceptions
 {    public class InvalidChoice : Exception
     {
         public InvalidChoice(string message):base(message){
-            Console.Write("InvalidChoice : "+message);
-            Console.WriteLine("\nEnter your choice Again:");
+            Console.Write("InvalidChoice : ");
         }
     }
     public class NullField : Exception

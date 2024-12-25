@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace HomePage
 {
     public struct Booking
@@ -27,8 +22,8 @@ namespace HomePage
         // Override ToString() for display purposes
         public override string ToString()
         {
-            return $"Passenger: {PassengerName}, Age: {Age}, Date: {Date}, " +
-                   $"Flight Number: {FlightNumber}, Booking ID: {BookingId}";
+            return $"Booking ID: {BookingId}, Passenger: {PassengerName}, Age: {Age}, Date: {Date}, " +
+                   $"Flight Number: {FlightNumber}";
         }
     }
 

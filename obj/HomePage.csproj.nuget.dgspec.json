@@ -46,6 +46,10 @@
             "ConsoleTextFormat": {
               "target": "Package",
               "version": "[1.2.4, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
             }
           },
           "imports": [

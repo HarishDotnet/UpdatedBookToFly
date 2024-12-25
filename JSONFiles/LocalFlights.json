@@ -1,14 +1,5 @@
 [
   {
-    "FlightNumber": "LF101",
-    "FlightName": "Air India",
-    "From": "Delhi",
-    "To": "Mumbai",
-    "Time": "9:00 AM",
-    "Price": 4500,
-    "SeatAvailability": 45
-  },
-  {
     "FlightNumber": "LF102",
     "FlightName": "IndiGo",
     "From": "Bangalore",
@@ -97,5 +88,32 @@
     "Time": "8:45 PM",
     "Price": 1000,
     "SeatAvailability": 8
+  },
+  {
+    "FlightNumber": "LF013",
+    "FlightName": "Kingfisher",
+    "From": "Madurai",
+    "To": "Chennai",
+    "Time": "6:45 PM",
+    "Price": 2500,
+    "SeatAvailability": 49
+  },
+  {
+    "FlightNumber": "LF013",
+    "FlightName": "Kingfisher",
+    "From": "Madurai",
+    "To": "Chennai",
+    "Time": "6:45 PM",
+    "Price": 2500,
+    "SeatAvailability": 49
+  },
+  {
+    "FlightNumber": "LF101",
+    "FlightName": "Air India",
+    "From": "Delhi",
+    "To": "Mumbai",
+    "Time": "9:00 AM",
+    "Price": 5000,
+    "SeatAvailability": 45
   }
 ]

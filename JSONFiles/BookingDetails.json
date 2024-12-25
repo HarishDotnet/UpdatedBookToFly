@@ -1,0 +1,37 @@
+{
+  "BTF01": {
+    "PassengerName": "Mani",
+    "Age": 18,
+    "Date":  "23-12-2024",
+    "FlightNumber": "LF108",
+    "BookingId": "BTF01"
+  },
+  "BTF02": {
+    "PassengerName": "harish",
+    "Age": 21,
+    "Date": "12-12-2024",
+    "FlightNumber": "LF108",
+    "BookingId": "BTF02"
+  },
+  "BTF03": {
+    "PassengerName": "hari",
+    "Age": 32,
+    "Date": "26-07-2024",
+    "FlightNumber": "LF104",
+    "BookingId": "BTF03"
+  },
+  "BTF04": {
+    "PassengerName": "RajaLakshmi",
+    "Age": 30,
+    "Date": "02-08-1900",
+    "FlightNumber": "IF103",
+    "BookingId": "BTF04"
+  },
+  "BTF08": {
+    "PassengerName": "Gayathri",
+    "Age": 24,
+    "Date": "06-08-2025",
+    "FlightNumber": "IF104",
+    "BookingId": "BTF08"
+  }
+}
