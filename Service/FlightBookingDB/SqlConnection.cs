@@ -1,6 +1,6 @@
-using Admin;
 using Microsoft.Data.SqlClient;
-namespace HomePage.FlightBookingDB
+using Microsoft.Extensions.Configuration;
+namespace HomePage.Service.FlightBookingDB
 {
     public class FlightBookingConnection
     {
@@ -8,11 +8,20 @@ namespace HomePage.FlightBookingDB
         SqlConnection connection;
         public FlightBookingConnection()
         {
-            connectionString = @"Data Source=Asplap1812\SQLEXPRESS;Initial Catalog=FlightBooking;Integrated Security=True;TrustServerCertificate=True;";
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                 .AddJsonFile(@"Model/JSONFiles/AppSettings.json", reloadOnChange: true, optional: false).Build();
+                connectionString = configuration.GetConnectionString("Connection");
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Error...to get connection" + exception.Message);
+            }
             connection = new SqlConnection(connectionString);
             connection.Open();
         }
-
         public void AddDetails(string username, string password, object authObject)
         {
             string tableName = authObject is AdminAuthentication ? "Admins" : "Users";
@@ -30,10 +39,10 @@ namespace HomePage.FlightBookingDB
             string query = "SELECT Username FROM Users"; // Adjust the table and column names as needed
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
-            int i=1;
+            int i = 1;
             while (reader.Read())
             {
-                Console.WriteLine(i++ +". "+reader["Username"].ToString());
+                Console.WriteLine(i++ + ". " + reader["Username"].ToString());
             }
         }
         public bool isDuplicate(string username, object authObject)

@@ -1,8 +1,9 @@
 using System.Text.Json;
-using System;
+using HomePage.Model;
 using ConsoleTextFormat;
-using HomePage.Logging;
-namespace HomePage
+using HomePage.Utils.Logging;
+using HomePage.Utils;
+namespace HomePage.Service
 {
     public class UserOptions : IUserOption
     {
@@ -132,7 +133,7 @@ namespace HomePage
         }
         public void addBookingInfo(string bookingId, Booking bookingInfo)
         {
-            string filePath = @"JSONFiles/BookingDetails.json"; // Path to your JSON file
+            string filePath = @"Model/JSONFiles/BookingDetails.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
             Dictionary<string, Booking> temp = JsonSerializer.Deserialize<Dictionary<string, Booking>>(json);
             temp.Add(bookingId, bookingInfo);
@@ -142,7 +143,7 @@ namespace HomePage
         public bool showTicket(string bookingId)
         {
             bool found = false;
-            string filePath = @"JSONFiles/BookingDetails.json"; // Path to your JSON file
+            string filePath = @"Model/JSONFiles/BookingDetails.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
             // Deserialize the JSON into a Dictionary
             Dictionary<string, Booking> bookings;
@@ -173,7 +174,7 @@ namespace HomePage
         {
             try
             {
-                string filePath = @"JSONFiles/BookingDetails.json"; // Path to your JSON file
+                string filePath = @"Model/JSONFiles/BookingDetails.json"; // Path to your JSON file
                 // Read JSON file
                 string json = File.ReadAllText(filePath);
 

@@ -1,7 +1,7 @@
-using System.Text.Json;
-using BookToFlyExceptions;
+using HomePage.Model;
+using Utils.BookToFlyExceptions;
 using ConsoleTextFormat;
-namespace HomePage
+namespace HomePage.Utils
 {
     class Input
     {

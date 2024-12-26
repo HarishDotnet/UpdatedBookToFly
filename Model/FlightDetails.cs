@@ -1,6 +1,6 @@
 using System.Text.Json;
 using ConsoleTextFormat;
-namespace HomePage
+namespace HomePage.Model
 {
     public struct Flight
     {
@@ -21,9 +21,9 @@ namespace HomePage
              temp.Add(flight);
              string json = JsonSerializer.Serialize(temp, new JsonSerializerOptions { WriteIndented = true });
              if(FlightType is LocalFlights)
-                File.WriteAllText(@"JSONFiles/LocalFlights.json",json);
+                File.WriteAllText(@"Model/JSONFiles/LocalFlights.json",json);
             else
-                File.WriteAllText(@"JSONFiles/InternationalFlights.json",json);
+                File.WriteAllText(@"Model/JSONFiles/InternationalFlights.json",json);
         }
     }
     class InternationalFlights : AbstractFlightDetails
@@ -31,7 +31,7 @@ namespace HomePage
         public InternationalFlights()
         {
             // Create a list to store flight instances
-            string filePath = @"JSONFiles/InternationalFlights.json"; // Path to your JSON file
+            string filePath = @"Model/JSONFiles/InternationalFlights.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
             this.flights = JsonSerializer.Deserialize<List<Flight>>(json);
         }
@@ -41,7 +41,7 @@ namespace HomePage
     {
         public LocalFlights()
         {
-            string filePath = @"JSONFiles/LocalFlights.json"; // Path to your JSON file
+            string filePath = @"Model/JSONFiles/LocalFlights.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
             this.flights = JsonSerializer.Deserialize<List<Flight>>(json);
         }

@@ -135,15 +135,6 @@
     "SeatAvailability": 30
   },
   {
-    "FlightNumber": "IF117",
-    "FlightName": "Safari Wings",
-    "From": "Nairobi",
-    "To": "Addis Ababa",
-    "Time": "10:30 AM",
-    "Price": 32000,
-    "SeatAvailability": 74
-  },
-  {
     "FlightNumber": "IF102",
     "FlightName": "Oceanic Airlines",
     "From": "London",
@@ -178,5 +169,14 @@
     "Time": "8:00 PM",
     "Price": 40000,
     "SeatAvailability": 59
+  },
+  {
+    "FlightNumber": "IF117",
+    "FlightName": "Safari Wings",
+    "From": "Nairobi",
+    "To": "Addis Ababa",
+    "Time": "10:30 AM",
+    "Price": 32000,
+    "SeatAvailability": 72
   }
 ]

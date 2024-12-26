@@ -1,6 +1,7 @@
-using Authenticator;
+using HomePage.Utils;
+using HomePage.Model;
 using ConsoleTextFormat;
-namespace HomePage
+namespace HomePage.Service
 {
     internal class UserAuthentication : LoginAndSignupPage
     {

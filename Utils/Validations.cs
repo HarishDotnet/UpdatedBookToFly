@@ -1,5 +1,5 @@
 using ConsoleTextFormat;
-using BookToFlyExceptions;
+using Utils.BookToFlyExceptions;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Text.Json;
@@ -63,7 +63,7 @@ namespace HomePage
         }
         public bool isValidBookingId(string bookingId)
         {
-            string filePath = @"JsonFiles/BookingDetails.json"; // Path to your JSON file
+            string filePath = @"Model/JsonFiles/BookingDetails.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
             // Deserialize the JSON into a Dictionary
             Dictionary<string, Booking> bookings;

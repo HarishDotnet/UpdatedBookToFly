@@ -1,8 +1,8 @@
 ﻿using HomePage;
 using ConsoleTextFormat;
-using Admin;
-using HomePage.FlightBookingDB;
-namespace Authenticator
+using HomePage.Service.FlightBookingDB;
+using HomePage.Utils;
+namespace HomePage.Service
 {
     public class LoginAndSignupPage
     {

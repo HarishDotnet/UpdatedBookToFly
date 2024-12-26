@@ -2,7 +2,7 @@
   "BTF01": {
     "PassengerName": "Mani",
     "Age": 18,
-    "Date":  "23-12-2024",
+    "Date": "23-12-2024",
     "FlightNumber": "LF108",
     "BookingId": "BTF01"
   },
@@ -33,5 +33,12 @@
     "Date": "06-08-2025",
     "FlightNumber": "IF104",
     "BookingId": "BTF08"
+  },
+  "BTF05": {
+    "PassengerName": "Amar",
+    "Age": 22,
+    "Date": "14-01-2025",
+    "FlightNumber": "IF117",
+    "BookingId": "BTF05"
   }
 }

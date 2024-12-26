@@ -1,4 +1,4 @@
-namespace BookToFlyExceptions
+namespace Utils.BookToFlyExceptions
 {    public class InvalidChoice : Exception
     {
         public InvalidChoice(string message):base(message){

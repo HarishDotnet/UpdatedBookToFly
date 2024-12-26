@@ -1,9 +1,9 @@
-using Authenticator;
-using HomePage;
+using HomePage.Utils;
 using ConsoleTextFormat;
 using System.Text.Json;
-using HomePage.FlightBookingDB;
-namespace Admin
+using HomePage.Model;
+using HomePage.Service.FlightBookingDB;
+namespace HomePage.Service
 {
     class AdminAuthentication : LoginAndSignupPage
     {
@@ -43,6 +43,7 @@ namespace Admin
                             Console.WriteLine($"\t\t\tYou have selected {Fmt.fgMag}Add Flight{Fmt.fgWhi}");
                             FlightType = option.SelectFlightType();
                             Flight flight = input.getFlightInputs(FlightType);
+                            Console.WriteLine("....Confirming admin....");
                             if (this.Login())
                             {
                                 flight.addFlight(flight, FlightType);
@@ -102,8 +103,8 @@ namespace Admin
             string flightNumber = input.getFlightNumber(FlightType);
             Flight flight = input.getFlightDetails(flightNumber, FlightType);
             Console.WriteLine("Are you sure you want to Remove this Flight: (y/n)");
-            var key = Console.ReadKey();
-            if (key.KeyChar == 'y')
+            string key = Console.ReadLine();
+            if (key.ToLower().Equals("y"))
             {
                 Console.WriteLine("....Confirming admin....");
                 if (this.Login())
@@ -111,9 +112,9 @@ namespace Admin
                     FlightType.flights!.Remove(flight);
                     string json = JsonSerializer.Serialize(FlightType.flights, new JsonSerializerOptions { WriteIndented = true });
                     if (FlightType is LocalFlights)
-                        File.WriteAllText(@"JSONFiles/LocalFlights.json", json);
+                        File.WriteAllText(@"Model/JSONFiles/LocalFlights.json", json);
                     else
-                        File.WriteAllText(@"JSONFiles/InternationalFlights.json", json);
+                        File.WriteAllText(@"Model/JSONFiles/InternationalFlights.json", json);
                     Console.WriteLine($"\n\t\t\t{Fmt.fgGre}Flight Detail Removed successfully...!{Fmt.fgWhi}");
                 }
                 else
@@ -178,8 +179,8 @@ namespace Admin
 
             }
             Console.WriteLine("Are you sure you want to update this detail: (y/n)");
-            var key = Console.ReadKey();
-            if (key.KeyChar == 'y')
+            var key = Console.ReadLine();
+            if (key.ToLower().Equals("y"))
             {
                 Console.WriteLine("....Confirming admin....");
                 if (this.Login())
@@ -187,9 +188,9 @@ namespace Admin
                     FlightType.flights!.Add(flight);
                     string json = JsonSerializer.Serialize(FlightType.flights, new JsonSerializerOptions { WriteIndented = true });
                     if (FlightType is LocalFlights)
-                        File.WriteAllText(@"JSONFiles/LocalFlights.json", json);
+                        File.WriteAllText(@"Model/JSONFiles/LocalFlights.json", json);
                     else
-                        File.WriteAllText(@"JSONFiles/InternationalFlights.json", json);
+                        File.WriteAllText(@"Model/JSONFiles/InternationalFlights.json", json);
                     Console.WriteLine($"\n\t\t\t{Fmt.fgGre}Flight Details Updated successfully...!{Fmt.fgWhi}");
                 }
                 else

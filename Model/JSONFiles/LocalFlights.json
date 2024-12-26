@@ -99,13 +99,13 @@
     "SeatAvailability": 49
   },
   {
-    "FlightNumber": "LF013",
+    "FlightNumber": "LF017",
     "FlightName": "Kingfisher",
-    "From": "Madurai",
-    "To": "Chennai",
-    "Time": "6:45 PM",
+    "From": "Chennai",
+    "To": "Madurai",
+    "Time": "6:45 AM",
     "Price": 2500,
-    "SeatAvailability": 49
+    "SeatAvailability": 0
   },
   {
     "FlightNumber": "LF101",
@@ -115,5 +115,14 @@
     "Time": "9:00 AM",
     "Price": 5000,
     "SeatAvailability": 45
+  },
+  {
+    "FlightNumber": "LF116",
+    "FlightName": "AirRide",
+    "From": "Trichy",
+    "To": "Chennai",
+    "Time": "3.00 AM",
+    "Price": 3200,
+    "SeatAvailability": 40
   }
 ]

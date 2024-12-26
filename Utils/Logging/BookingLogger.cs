@@ -1,7 +1,7 @@
-namespace HomePage.Logging{
+namespace HomePage.Utils.Logging{
 public static class Logger
     {
-        private static readonly string logFilePath = "Logging/BookingLogs.txt"; // Path to the log file
+        private static readonly string logFilePath = @"Utils/Logging/BookingLogs.txt"; // Path to the log file
 
         public static void Log(string message)
         {

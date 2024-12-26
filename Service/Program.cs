@@ -6,9 +6,9 @@
 @reviewedBy     -
 @reviewedOn     -
 */
-using Admin;
 using ConsoleTextFormat;
-namespace HomePage
+using HomePage.Utils;
+namespace HomePage.Service
 {
     public class HomePage
     {
@@ -20,7 +20,7 @@ namespace HomePage
             Input input = new Input();
             do
             {
-                for(int i=0;i<100;i++){Console.Write($"{Fmt.fgblu}-");Thread.Sleep(10);}
+                for(int i=0;i<100;i++){Console.Write($"{Fmt.fgblu}-");Thread.Sleep(5);}
                 Console.WriteLine();
                 Console.WriteLine($"\n\t\t{Fmt.fgCya}Welcome to the BookToFly Console Application{Fmt.fgWhi}");Thread.Sleep(100);
                 Console.WriteLine("Please select your profile by pressing (1/2/3):");Thread.Sleep(100);
@@ -64,3 +64,5 @@ namespace HomePage
     }
    
 }
+ 
+ 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HomePage
+namespace HomePage.Model
 {
     public interface IUserOption 
     {

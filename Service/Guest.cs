@@ -1,9 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using ConsoleTextFormat;
-
-namespace HomePage
+using HomePage.Utils;
+using HomePage.Model;
+namespace HomePage.Service
 {
     public class Guest
     {
