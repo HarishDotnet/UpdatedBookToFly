@@ -1,27 +1,34 @@
-﻿using HomePage;
-using ConsoleTextFormat;
+﻿using ConsoleTextFormat;
+using Microsoft.Extensions.Logging;
 using HomePage.Service.FlightBookingDB;
 using HomePage.Utils;
+
 namespace HomePage.Service
 {
     public class LoginAndSignupPage
     {
-        private Dictionary<string ,string > adminDetails=new Dictionary<string ,string >();
-        FlightBookingConnection flightBookingConnection;
-        Input input=new Input();
-        string Profile;
-    
-        public LoginAndSignupPage()
+        private Dictionary<string ,string > adminDetails = new Dictionary<string ,string >();
+        private readonly FlightBookingConnection _flightBookingConnection;
+        private readonly Input input = new Input();
+        private string Profile;
+
+        protected readonly ILogger<LoginAndSignupPage> _logger;
+
+        // Constructor accepting the ILogger
+        public LoginAndSignupPage(ILogger<LoginAndSignupPage> logger,FlightBookingConnection flightBookingConnection)
         {
-            flightBookingConnection=new FlightBookingConnection();
-            Profile=this is AdminAuthentication?"Admin":"User";
+            _logger = logger;
+            Profile = this is AdminAuthentication ? "Admin" : "User";
+            _flightBookingConnection=flightBookingConnection;
         }
+
+
         public bool Begin()
         {
             if (this is AdminAuthentication)
             {
-                if(!flightBookingConnection.isDuplicate("Admin",this))
-                    flightBookingConnection.AddDetails("Admin","Admin@123",this);
+                // if(!flightBookingConnection.isDuplicate("Admin",this))
+                //     flightBookingConnection.AddDetails("Admin","Admin@123",this);
                 return this.Login();
             }
             
@@ -45,17 +52,17 @@ namespace HomePage.Service
         {
             Console.WriteLine($"\n\t\t{Fmt.b}{Fmt.fgGre}(: Welcome to BookToFly User SignUp Page :) {Fmt.fgWhi}{Fmt._b}");
             Re_enter_Username:
-            String userName = input.getUserName();
-            if(flightBookingConnection.isDuplicate(userName,this)){
+            string userName = input.getUserName();
+            if(_flightBookingConnection.isDuplicate(userName,this)){
                 Console.WriteLine($"{Fmt.fgRed}Username : {Fmt.fgGre}{userName}{Fmt.fgRed} already exist try enter different firstname and lastname.{Fmt.fgWhi}");
                 goto Re_enter_Username;
             }
             string password = input.getValidPassword(userName);
-            Console.WriteLine("Account Created successfull!\n");
+            Console.WriteLine("Account Created successfully!\n");
             Thread.Sleep(1000);
             Console.WriteLine($"\n\t\t{Fmt.b}Your UserName is : {Fmt.fgGre}{userName}{Fmt.fgWhi}{Fmt._b}");
             Thread.Sleep(3000);
-            flightBookingConnection.AddDetails(userName,password,this);
+            _flightBookingConnection.AddDetails(userName,password,this);
             return this.Begin();
         }
 
@@ -67,7 +74,7 @@ namespace HomePage.Service
             Console.WriteLine("Enter Your Password: ");
             string password = input.getMaskedPassword();
             bool isUser = false;
-            isUser = flightBookingConnection.CheckAuthentication(username,password,this);
+            isUser = _flightBookingConnection.CheckAuthentication(username,password,this);
             if(isUser)
             {
                 Console.WriteLine($"\n\t\t{Fmt.fgGre}Welcome ({username}){Fmt.fgWhi}");
@@ -80,6 +87,4 @@ namespace HomePage.Service
             return false;
         }
     }
-
-
 }

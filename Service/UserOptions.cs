@@ -3,14 +3,21 @@ using HomePage.Model;
 using ConsoleTextFormat;
 using HomePage.Utils.Logging;
 using HomePage.Utils;
+using Microsoft.Extensions.Logging;
+
 namespace HomePage.Service
 {
     public class UserOptions : IUserOption
     {
-        Input input;
-        public UserOptions()
+        private readonly ILogger<UserOptions> _logger;
+        Input input=new Input();
+        // Inject Input and ILogger<UserOptions> via constructor
+
+        public UserOptions(){}
+        public UserOptions(ILogger<UserOptions> logger)
         {
-            input = new Input();
+            
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public AbstractFlightDetails SelectFlightType()
@@ -18,31 +25,27 @@ namespace HomePage.Service
             Console.WriteLine("\n--- Select Flight Type ---");
             Console.WriteLine("1. Domestic Flights");
             Console.WriteLine("2. International Flights");
-            int choice = new Input().getValidChoice(1, 2);
+            int choice = input.getValidChoice(1, 2);
             if (choice == 1)
             {
-                // Create an instance of LocalFlights
                 Console.WriteLine($"\t\t\tYou have selected {Fmt.fgMag}Domestic Flight {Fmt.fgWhi}");
-                AbstractFlightDetails localFlights = new LocalFlights();
-                return localFlights;
+                _logger.LogInformation("User selected Domestic Flight.");
+                return new LocalFlights();
             }
             else
             {
-                // Create an instance of InternationalFlights
                 Console.WriteLine($"\t\t\tYou have selected {Fmt.fgMag}International Flight {Fmt.fgWhi}");
-                AbstractFlightDetails internationalFlights = new InternationalFlights();
-                return internationalFlights;
+                _logger.LogInformation("User selected International Flight.");
+                return new InternationalFlights();
             }
-
         }
 
-        //will display all the flight details 
         public void ShowFlightDetails(AbstractFlightDetails FlightType)
         {
             Console.WriteLine($"\n\t\t\t\t\t\t{Fmt.fgMag}--- Available Flights ---{Fmt.fgGre}\n");
-            for (int i = 0; i < 110; i++) { Console.Write("-"); Thread.Sleep(1); };
+            for (int i = 0; i < 110; i++) { Console.Write("-"); Thread.Sleep(1); }
             Console.WriteLine("\n|  Flight No   |    Flight Name    |        From        |        To        |     Time     | Price Rs | Seats |");
-            for (int i = 0; i < 110; i++) { Console.Write("-"); Thread.Sleep(10); };
+            for (int i = 0; i < 110; i++) { Console.Write("-"); Thread.Sleep(10); }
             Console.WriteLine(Fmt.fgWhi);
             foreach (var flight in FlightType.flights)
             {
@@ -52,7 +55,6 @@ namespace HomePage.Service
             }
         }
 
-        //will return true if the source and destination exists and as well as it prints the list of flights
         private bool GetFlight(string source, string destination, AbstractFlightDetails FlightType)
         {
             bool found = false;
@@ -64,13 +66,18 @@ namespace HomePage.Service
                 {
                     Console.WriteLine(flight);
                     found = true;
+                    _logger.LogInformation($"Flight found: {flight.FlightNumber} from {flight.From} to {flight.To}");
                 }
                 Thread.Sleep(50);
             }
             if (!found)
+            {
+                _logger.LogWarning($"No flights available from {source} to {destination}."); 
                 Console.WriteLine($"{Fmt.fgRed}{source} to {destination} Flight not Available. Sorry for inconvenience{Fmt.fgWhi}");
+            }
             return found;
         }
+
         public bool SearchFlight(AbstractFlightDetails FlightType)
         {
             Console.Write("Enter source: ");
@@ -79,6 +86,7 @@ namespace HomePage.Service
             string destination = Console.ReadLine().ToLower();
             return this.GetFlight(source, destination, FlightType);
         }
+
         public string BookTicket(AbstractFlightDetails FlightType)
         {
             Console.Write("Enter Passenger Name: ");
@@ -88,16 +96,7 @@ namespace HomePage.Service
 
             Console.WriteLine("Enter your date of journey (dd/MM/yyyy)[02/12/2025]:");
             string date = input.getDate();
-            // bool doAgain = false;
-            // do
-            // {
-            //     doAgain = false;
-            //     if (this.SearchFlight(FlightType))
-            //         break;
-            //     Console.WriteLine($"{Fmt.fgYel}\nAre you want to try a different source and destination? (y or n){Fmt.fgWhi}");
-            //     string opt = Console.ReadLine().ToLower();
-            //     doAgain = opt.Equals("y") ? true : false;
-            // } while (doAgain);
+
             ShowFlightDetails(FlightType);
             Console.WriteLine("Enter Flight Number that you want to travel:");
             string flightNumber = input.getFlightNumber(FlightType);
@@ -112,11 +111,13 @@ namespace HomePage.Service
             {
                 flight.SeatAvailability -= 1;
                 flight.addFlight(flight, FlightType);
+                _logger.LogInformation($"Booking successful for flight {flightNumber}. Seats left: {flight.SeatAvailability}");
             }
             else
             {
                 flight.addFlight(flight, FlightType);
                 Console.WriteLine("Seat not available. Please try later.");
+                _logger.LogWarning($"Seat unavailable for flight {flightNumber}. Booking failed.");
                 return null;
             }
 
@@ -128,9 +129,10 @@ namespace HomePage.Service
 
             // Log the booking details
             string logMessage = $"Booking ID: {bookingId}, Passenger: {passengerName}, Age: {age}, Date: {date}, Flight Number: {flightNumber}";
-            Logger.Log(logMessage);
+            _logger.LogInformation(logMessage);
             return bookingId;
         }
+
         public void addBookingInfo(string bookingId, Booking bookingInfo)
         {
             string filePath = @"Model/JSONFiles/BookingDetails.json"; // Path to your JSON file
@@ -140,23 +142,17 @@ namespace HomePage.Service
             json = JsonSerializer.Serialize(temp, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
         }
+
         public bool showTicket(string bookingId)
         {
             bool found = false;
             string filePath = @"Model/JSONFiles/BookingDetails.json"; // Path to your JSON file
             string json = File.ReadAllText(filePath);
-            // Deserialize the JSON into a Dictionary
-            Dictionary<string, Booking> bookings;
-            if (string.IsNullOrWhiteSpace(json))
-                bookings = new Dictionary<string, Booking>(); // If empty file, use empty dictionary
-            else
-                bookings = JsonSerializer.Deserialize<Dictionary<string, Booking>>(json);
+            Dictionary<string, Booking> bookings = JsonSerializer.Deserialize<Dictionary<string, Booking>>(json);
 
-            // Ask user to input the Booking ID to search
             if (bookings != null && bookings.ContainsKey(bookingId))
             {
                 Booking booking = bookings[bookingId];
-                // Print the booking details
                 Console.WriteLine($"\n\t\t{Fmt.fgYel}Ticket Details:");
                 Console.WriteLine($"{Fmt.fgGre}Passenger Name:{Fmt.fgWhi}{Fmt.b} {booking.PassengerName}{Fmt._b}");
                 Console.WriteLine($"{Fmt.fgGre}Age: {Fmt.fgWhi}{Fmt.b}{booking.Age}{Fmt._b}");
@@ -167,21 +163,19 @@ namespace HomePage.Service
             else
             {
                 Console.WriteLine("\t\tTicket not available.");
+                _logger.LogWarning($"No ticket found for Booking ID: {bookingId}.");
             }
             return found;
         }
+
         public void ShowAllTickets()
         {
             try
             {
                 string filePath = @"Model/JSONFiles/BookingDetails.json"; // Path to your JSON file
-                // Read JSON file
                 string json = File.ReadAllText(filePath);
-
-                // Deserialize JSON into a dictionary
                 var bookingDetails = JsonSerializer.Deserialize<Dictionary<string, Booking>>(json);
 
-                // Iterate and print the dictionary content
                 foreach (var booking in bookingDetails)
                 {
                     Console.WriteLine($"{Fmt.fgblu}Booking ID: {booking.Key}{Fmt.fgWhi}");
@@ -192,7 +186,7 @@ namespace HomePage.Service
             }
             catch (Exception ex)
             {
-                // Handle errors (e.g., file not found, invalid JSON)
+                _logger.LogError($"Error reading or parsing the file: {ex.Message}");
                 Console.WriteLine($"Error reading or parsing the file: {ex.Message}");
             }
         }

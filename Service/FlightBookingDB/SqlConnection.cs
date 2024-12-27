@@ -1,92 +1,138 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using HomePage.Service;
+
 namespace HomePage.Service.FlightBookingDB
 {
     public class FlightBookingConnection
     {
         private string connectionString;
-        SqlConnection connection;
-        public FlightBookingConnection()
+        private SqlConnection connection;
+        private readonly ILogger<FlightBookingConnection> _logger;
+
+        // Constructor with ILogger injection
+        public FlightBookingConnection(ILogger<FlightBookingConnection> logger)
         {
+            _logger = logger;
             try
             {
                 var configuration = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile(@"Model/JSONFiles/AppSettings.json", reloadOnChange: true, optional: false).Build();
+                 .AddJsonFile(@"Model/JSONFiles/AppSettings.json", reloadOnChange: true, optional: false)
+                 .Build();
+
                 connectionString = configuration.GetConnectionString("Connection");
+                connection = new SqlConnection(connectionString);
+                connection.Open();
+                _logger.LogInformation("Database connection established successfully.");
             }
             catch (Exception exception)
             {
-                Console.WriteLine("Error...to get connection" + exception.Message);
+                _logger.LogError(exception, "Error while establishing database connection.");
+                Console.WriteLine("Error to get connection: " + exception.Message);
             }
-            connection = new SqlConnection(connectionString);
-            connection.Open();
         }
+             
         public void AddDetails(string username, string password, object authObject)
         {
             string tableName = authObject is AdminAuthentication ? "Admins" : "Users";
             string query = $"INSERT INTO {tableName} (Username, Password) VALUES (@Username, @Password)";
-            using (var command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@Username", username);
-                command.Parameters.AddWithValue("@Password", password);
-                command.ExecuteNonQuery();
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    command.ExecuteNonQuery();
+                    _logger.LogInformation("User details added successfully for {Username}.", username);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while adding user details for {Username}.", username);
             }
         }
+
         public void DisplayUserName()
         {
-
             string query = "SELECT Username FROM Users"; // Adjust the table and column names as needed
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            int i = 1;
-            while (reader.Read())
+            try
             {
-                Console.WriteLine(i++ + ". " + reader["Username"].ToString());
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                int i = 1;
+                while (reader.Read())
+                {
+                    Console.WriteLine(i++ + ". " + reader["Username"].ToString());
+                }
+                reader.Close();
+                _logger.LogInformation("Displayed user names.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while displaying user names.");
             }
         }
+
         public bool isDuplicate(string username, object authObject)
         {
             string tableName = authObject is AdminAuthentication ? "Admins" : "Users";
             string query = $"SELECT COUNT(*) FROM {tableName} WHERE Username = @Username";
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.AddWithValue("@Username", username);
-                int count = (int)command.ExecuteScalar();
-                return count > 0;
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    int count = (int)command.ExecuteScalar();
+                    bool isDuplicate = count > 0;
+                    _logger.LogInformation("Checked for duplicate username: {Username}, Found: {IsDuplicate}", username, isDuplicate);
+                    return isDuplicate;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while checking for duplicate username: {Username}", username);
+                return false;
             }
         }
-        public Dictionary<string, string> getDataFromDB(object authObject)
+
+        public Dictionary<string, string> getDataFromDB(string tableName)
         {
             Dictionary<string, string> userData = new Dictionary<string, string>();
-            string tableName = authObject is AdminAuthentication ? "Admins" : "Users";
-
             string query = $"SELECT * FROM {tableName}";
-            using (var command = new SqlCommand(query, connection))
-            {
 
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+            try
+            {
+                using (var command = new SqlCommand(query, connection))
                 {
-                    string username = reader["username"].ToString();
-                    string someOtherColumn = reader["password"].ToString();
-                    userData.Add(username, someOtherColumn);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string username = reader["username"].ToString();
+                        string password = reader["password"].ToString();
+                        userData.Add(username, password);
+                    }
+                    reader.Close();
+                    _logger.LogInformation("Fetched data from {TableName} table.", tableName);
                 }
-                reader.Close();
-                return userData;
             }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while fetching data from {TableName} table.", tableName);
+            }
+
+            return userData;
         }
 
         public bool CheckAuthentication(string username, string password, object authObject)
         {
-            object authType = authObject is AdminAuthentication ? new AdminAuthentication() : new UserAuthentication();
+            string authType = authObject is AdminAuthentication ?"Admins" : "Users";
             Dictionary<string, string> datas = this.getDataFromDB(authType);
 
-            if (datas.ContainsKey(username) && datas[username].Equals(password))
-            {
-                return true;
-            }
-            return false;
+            bool isAuthenticated = datas.ContainsKey(username) && datas[username].Equals(password);
+            _logger.LogInformation("Checked authentication for user: {Username}, Success: {IsAuthenticated}", username, isAuthenticated);
+            return isAuthenticated;
         }
     }
 }

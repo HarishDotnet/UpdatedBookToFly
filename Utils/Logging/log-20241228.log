@@ -1,0 +1,76 @@
+2024-12-28 00:11:30.578 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:19:30.709 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:22:19.353 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:22:19.449 +05:30 [INF] Application Started
+2024-12-28 00:22:27.895 +05:30 [INF] UserAuthentication process started.
+2024-12-28 00:22:41.971 +05:30 [ERR] Error during user authentication.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HomePage.Service.LoginAndSignupPage.Login() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 76
+   at HomePage.Service.LoginAndSignupPage.Begin() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 45
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 28
+2024-12-28 00:23:16.892 +05:30 [INF] UserAuthentication process started.
+2024-12-28 00:23:29.701 +05:30 [ERR] Error during user authentication.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HomePage.Service.LoginAndSignupPage.SignUp() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 55
+   at HomePage.Service.LoginAndSignupPage.Begin() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 43
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 28
+2024-12-28 00:25:52.402 +05:30 [INF] Application Ended.
+
+2024-12-28 00:28:58.564 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:28:58.599 +05:30 [INF] Application Started
+2024-12-28 00:29:12.896 +05:30 [INF] Application Ended.
+ ----------------------------------------------------------------------------------------------------
+2024-12-28 00:33:02.874 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:33:02.924 +05:30 [INF] Application Started
+2024-12-28 00:38:12.796 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:38:12.836 +05:30 [INF] Application Started
+2024-12-28 00:38:18.613 +05:30 [INF] UserAuthentication process started.
+2024-12-28 00:38:32.458 +05:30 [ERR] Error during user authentication.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HomePage.Service.LoginAndSignupPage.Login() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 76
+   at HomePage.Service.LoginAndSignupPage.Begin() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 45
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 28
+2024-12-28 00:49:54.732 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:49:54.780 +05:30 [INF] Application Started
+2024-12-28 00:50:00.812 +05:30 [INF] UserAuthentication process started.
+2024-12-28 00:50:15.486 +05:30 [ERR] Error during user authentication.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HomePage.Service.LoginAndSignupPage.Login() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 76
+   at HomePage.Service.LoginAndSignupPage.Begin() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\Authenticator.cs:line 45
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 28
+2024-12-28 00:53:48.041 +05:30 [INF] Database connection established successfully.
+2024-12-28 00:53:48.087 +05:30 [INF] Application Started
+2024-12-28 00:53:59.861 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 01:00:13.736 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:00:13.771 +05:30 [INF] Application Started
+2024-12-28 01:00:18.692 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 01:18:43.502 +05:30 [INF] Application Started
+2024-12-28 01:18:47.998 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 01:18:59.761 +05:30 [ERR] Error while fetching data from Admins table.
+System.InvalidOperationException: ExecuteReader: Connection property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlCommand.ValidateCommand(Boolean isAsync, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()
+   at HomePage.Service.FlightBookingDB.FlightBookingConnection.getDataFromDB(String tableName) in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\FlightBookingDB\SqlConnection.cs:line 110
+2024-12-28 01:18:59.779 +05:30 [INF] Checked authentication for user: Admin, Success: false
+2024-12-28 01:20:37.762 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:20:37.799 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:20:37.800 +05:30 [INF] Application Started
+2024-12-28 01:20:43.053 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 01:20:50.947 +05:30 [INF] Fetched data from Admins table.
+2024-12-28 01:20:50.949 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-28 01:21:04.877 +05:30 [INF] Admin selected option: 8
+2024-12-28 01:21:04.879 +05:30 [INF] Admin logged out successfully.
+2024-12-28 01:21:33.183 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:21:33.217 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:21:33.218 +05:30 [INF] Application Started
+2024-12-28 01:21:42.249 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 01:21:52.702 +05:30 [INF] Fetched data from Admins table.
+2024-12-28 01:21:52.705 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-28 01:21:56.344 +05:30 [INF] Admin selected option: 7
+2024-12-28 01:21:56.359 +05:30 [INF] Displayed user names.
+2024-12-28 01:22:11.434 +05:30 [INF] Admin chose to continue: true
+2024-12-28 01:22:13.046 +05:30 [INF] Admin selected option: 8
+2024-12-28 01:22:13.047 +05:30 [INF] Admin logged out successfully.
