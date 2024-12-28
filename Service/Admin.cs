@@ -12,8 +12,6 @@ namespace HomePage.Service
         private readonly Input input;
         private readonly UserOptions option;
         private readonly FlightBookingConnection _flightBookingConnection;
-        private readonly ILogger<AdminAuthentication> _logger;  // Logger for the class
-
         // Constructor now takes ILogger<AdminAuthentication>, FlightBookingConnection, Input, and UserOptions
         public AdminAuthentication(ILogger<AdminAuthentication> logger, 
                                     FlightBookingConnection flightBookingConnection,
@@ -21,7 +19,6 @@ namespace HomePage.Service
                                     UserOptions option)
             : base(logger,flightBookingConnection) // Pass the logger to the base class constructor
         {
-            _logger = logger;
             _flightBookingConnection = flightBookingConnection;
             this.input = input;
             this.option = option;

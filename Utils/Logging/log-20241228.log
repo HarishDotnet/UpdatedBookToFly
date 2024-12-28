@@ -217,3 +217,17 @@ System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
 2024-12-28 12:13:33.844 +05:30 [INF] AdminAuthentication process ended.
 2024-12-28 12:13:48.413 +05:30 [INF] Application Ended.
  ----------------------------------------------------------------------------------------------------
+2024-12-28 12:18:05.671 +05:30 [INF] Database connection established successfully.
+2024-12-28 12:18:05.708 +05:30 [INF] Database connection established successfully.
+2024-12-28 12:18:05.709 +05:30 [INF] Application Started
+2024-12-28 12:18:21.951 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 12:18:31.461 +05:30 [INF] Fetched data from Admins table.
+2024-12-28 12:18:31.464 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-28 12:18:38.811 +05:30 [INF] Admin selected option: 5
+2024-12-28 12:19:25.035 +05:30 [INF] Admin chose to continue: true
+2024-12-28 12:19:38.310 +05:30 [INF] Admin selected option: 7
+2024-12-28 12:19:38.314 +05:30 [INF] Displayed user names.
+2024-12-28 12:19:43.029 +05:30 [INF] Admin chose to continue: false
+2024-12-28 12:19:43.030 +05:30 [INF] AdminAuthentication process ended.
+2024-12-28 12:19:50.583 +05:30 [INF] Application Ended.
+ ----------------------------------------------------------------------------------------------------
