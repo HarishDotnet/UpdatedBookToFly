@@ -178,5 +178,14 @@
     "Time": "10:30 AM",
     "Price": 32000,
     "SeatAvailability": 72
+  },
+  {
+    "FlightNumber": "IF121",
+    "FlightName": "AirHost",
+    "From": "Chennai",
+    "To": "Dubai",
+    "Time": "8.45 PM",
+    "Price": 12000,
+    "SeatAvailability": 26
   }
 ]

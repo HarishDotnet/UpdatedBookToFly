@@ -9,13 +9,14 @@ namespace HomePage.Service
 {
     internal class UserAuthentication : LoginAndSignupPage
     {
+
         private readonly UserOptions _option;
         private readonly FlightBookingConnection _flightBookingConnection;
         // Constructor now requires the logger
-        public UserAuthentication(ILogger<UserAuthentication> logger,FlightBookingConnection flightBookingConnection) 
+        public UserAuthentication(ILogger<UserAuthentication> logger,FlightBookingConnection flightBookingConnection,UserOptions userOptions) 
             : base(logger,flightBookingConnection)  // Passing the logger to the base class
         {
-            _option = new UserOptions();
+            _option = userOptions ?? throw new ArgumentNullException(nameof(userOptions));
             _flightBookingConnection=flightBookingConnection;
         }
 

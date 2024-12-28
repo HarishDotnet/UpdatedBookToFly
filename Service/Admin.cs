@@ -64,7 +64,7 @@ namespace HomePage.Service
                             {
                                 flight.addFlight(flight, FlightType);
                                 Console.WriteLine($"\n\t\t\t{Fmt.fgGre}Flight added successfully...!{Fmt.fgWhi}");
-                                _logger.LogInformation("Flight added successfully: {Flight}", flight);
+                                _logger.LogInformation("Flight added successfully: \n{Flight}", flight);
                             }
                             else
                             {

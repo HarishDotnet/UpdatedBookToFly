@@ -12,11 +12,10 @@ namespace HomePage.Service
         Input input=new Input();
        
 
-        public UserOptions(){}
+        // public UserOptions(){}
         public UserOptions(ILogger<UserOptions> logger)
         {
            _logger = logger ?? throw new ArgumentNullException(nameof(logger));    
-        
         }
 
         public AbstractFlightDetails SelectFlightType()
@@ -28,13 +27,13 @@ namespace HomePage.Service
             if (choice == 1)
             {
                 Console.WriteLine($"\t\t\tYou have selected {Fmt.fgMag}Domestic Flight {Fmt.fgWhi}");
-                _logger.LogInformation("User selected Domestic Flight.");
+                _logger.LogInformation("selected Domestic Flight.");
                 return new LocalFlights();
             }
             else
             {
                 Console.WriteLine($"\t\t\tYou have selected {Fmt.fgMag}International Flight {Fmt.fgWhi}");
-                _logger.LogInformation("User selected International Flight.");
+                _logger.LogInformation("selected International Flight.");
                 return new InternationalFlights();
             }
         }

@@ -81,15 +81,6 @@
     "SeatAvailability": 50
   },
   {
-    "FlightNumber": "LF111",
-    "FlightName": "HarishFly",
-    "From": "Erode",
-    "To": "Rameshwaram",
-    "Time": "8:45 PM",
-    "Price": 1000,
-    "SeatAvailability": 8
-  },
-  {
     "FlightNumber": "LF013",
     "FlightName": "Kingfisher",
     "From": "Madurai",
@@ -124,5 +115,14 @@
     "Time": "3.00 AM",
     "Price": 3200,
     "SeatAvailability": 40
+  },
+  {
+    "FlightNumber": "LF111",
+    "FlightName": "HarishFly",
+    "From": "Erode",
+    "To": "Rameshwaram",
+    "Time": "8:45 PM",
+    "Price": 1000,
+    "SeatAvailability": 7
   }
 ]

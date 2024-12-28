@@ -16,14 +16,15 @@ namespace HomePage.Model
         {
             return $"|  {Fmt.fgMag}{FlightNumber,-12}{Fmt.fgWhi}|    {FlightName,-15}|    {From,-15}|    {To,-15}|    {Time,-10}| {Price,8} | {SeatAvailability,5} |";
         }
-        public void addFlight(Flight flight,AbstractFlightDetails FlightType){
-             List<Flight> temp=FlightType.flights!;
-             temp.Add(flight);
-             string json = JsonSerializer.Serialize(temp, new JsonSerializerOptions { WriteIndented = true });
-             if(FlightType is LocalFlights)
-                File.WriteAllText(@"Model/JSONFiles/LocalFlights.json",json);
+        public void addFlight(Flight flight, AbstractFlightDetails FlightType)
+        {
+            List<Flight> temp = FlightType.flights;
+            temp.Add(flight);
+            string json = JsonSerializer.Serialize(temp, new JsonSerializerOptions { WriteIndented = true });
+            if (FlightType is LocalFlights)
+                File.WriteAllText(@"Model/JSONFiles/LocalFlights.json", json);
             else
-                File.WriteAllText(@"Model/JSONFiles/InternationalFlights.json",json);
+                File.WriteAllText(@"Model/JSONFiles/InternationalFlights.json", json);
         }
     }
     class InternationalFlights : AbstractFlightDetails
@@ -35,7 +36,7 @@ namespace HomePage.Model
             string json = File.ReadAllText(filePath);
             this.flights = JsonSerializer.Deserialize<List<Flight>>(json);
         }
-       
+
     }
     class LocalFlights : AbstractFlightDetails
     {

@@ -175,3 +175,45 @@ System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
    at HomePage.Service.UserOptions.SelectFlightType() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\UserOptions.cs:line 31
    at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 84
 2024-12-28 11:48:00.274 +05:30 [INF] UserAuthentication process ended.
+2024-12-28 12:03:09.150 +05:30 [INF] Database connection established successfully.
+2024-12-28 12:03:09.180 +05:30 [INF] Database connection established successfully.
+2024-12-28 12:03:09.181 +05:30 [INF] Application Started
+2024-12-28 12:03:14.427 +05:30 [INF] UserAuthentication process started.
+2024-12-28 12:03:37.709 +05:30 [INF] Fetched data from Users table.
+2024-12-28 12:03:37.710 +05:30 [INF] Checked authentication for user: Amar@CTS, Success: true
+2024-12-28 12:03:37.713 +05:30 [INF] User authentication status: true
+2024-12-28 12:03:39.371 +05:30 [INF] User selected option: 3
+2024-12-28 12:03:41.009 +05:30 [INF] User selected Domestic Flight.
+2024-12-28 12:03:41.083 +05:30 [INF] User initiated booking for flight type: LocalFlights
+2024-12-28 12:04:27.548 +05:30 [INF] Booking successful for flight LF111. Seats left: 7
+2024-12-28 12:04:27.578 +05:30 [INF] Booking ID: BTF06, Passenger: Srikanth, Age: 23, Date: 27-03-2025, Flight Number: LF111
+2024-12-28 12:04:35.645 +05:30 [INF] User chose to continue: true
+2024-12-28 12:04:38.426 +05:30 [INF] User selected option: 4
+2024-12-28 12:04:47.754 +05:30 [INF] User requested ticket preview for Booking ID: BTF06
+2024-12-28 12:05:00.632 +05:30 [INF] User chose to continue: true
+2024-12-28 12:05:01.551 +05:30 [INF] User selected option: 2
+2024-12-28 12:05:06.317 +05:30 [INF] User selected International Flight.
+2024-12-28 12:05:06.318 +05:30 [INF] User initiated flight search for type: InternationalFlights
+2024-12-28 12:05:27.813 +05:30 [INF] Flight found: IF111 from Anchorage to Seattle
+2024-12-28 12:05:46.981 +05:30 [INF] User chose to continue: true
+2024-12-28 12:05:48.771 +05:30 [INF] User selected option: 5
+2024-12-28 12:05:48.772 +05:30 [INF] User logged out successfully.
+2024-12-28 12:06:03.506 +05:30 [INF] AdminAuthentication process started.
+2024-12-28 12:06:12.546 +05:30 [INF] Fetched data from Admins table.
+2024-12-28 12:06:12.547 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-28 12:06:15.346 +05:30 [INF] Admin selected option: 1
+2024-12-28 12:06:17.640 +05:30 [INF] User selected International Flight.
+2024-12-28 12:07:44.843 +05:30 [INF] Fetched data from Admins table.
+2024-12-28 12:07:44.844 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-28 12:07:44.849 +05:30 [INF] Flight added successfully: |  [35mIF121       [37m|    AirHost        |    Chennai        |    Dubai          |    8.45 PM   |    10000 |    26 |
+2024-12-28 12:09:55.071 +05:30 [INF] Admin chose to continue: true
+2024-12-28 12:10:08.772 +05:30 [INF] Admin selected option: 2
+2024-12-28 12:10:11.449 +05:30 [INF] User selected International Flight.
+2024-12-28 12:10:11.451 +05:30 [INF] Admin initiated flight update.
+2024-12-28 12:12:59.708 +05:30 [INF] Fetched data from Admins table.
+2024-12-28 12:12:59.709 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-28 12:12:59.712 +05:30 [INF] Flight updated: IF121
+2024-12-28 12:13:33.843 +05:30 [INF] Admin chose to continue: false
+2024-12-28 12:13:33.844 +05:30 [INF] AdminAuthentication process ended.
+2024-12-28 12:13:48.413 +05:30 [INF] Application Ended.
+ ----------------------------------------------------------------------------------------------------
