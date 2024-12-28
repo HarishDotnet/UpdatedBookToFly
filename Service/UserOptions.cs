@@ -1,7 +1,6 @@
 using System.Text.Json;
 using HomePage.Model;
 using ConsoleTextFormat;
-using HomePage.Utils.Logging;
 using HomePage.Utils;
 using Microsoft.Extensions.Logging;
 
@@ -11,13 +10,13 @@ namespace HomePage.Service
     {
         private readonly ILogger<UserOptions> _logger;
         Input input=new Input();
-        // Inject Input and ILogger<UserOptions> via constructor
+       
 
         public UserOptions(){}
         public UserOptions(ILogger<UserOptions> logger)
         {
-            
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+           _logger = logger ?? throw new ArgumentNullException(nameof(logger));    
+        
         }
 
         public AbstractFlightDetails SelectFlightType()

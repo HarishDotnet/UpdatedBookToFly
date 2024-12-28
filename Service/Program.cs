@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using ConsoleTextFormat;
 using Serilog;
 using HomePage.Utils;
-using HomePage.Utils.Logging;
+using HomePage.Model;
 using HomePage.Service.FlightBookingDB;
 
 namespace HomePage.Service
@@ -54,6 +54,7 @@ namespace HomePage.Service
                     case 3:
                         Console.WriteLine($"\t\t\t{Fmt.fgGre}You have selected Guest Page{Fmt.fgWhi}");
                         var guest = serviceProvider.GetRequiredService<Guest>(); // Resolving Guest from DI
+                        guest.Start();
                         doagain = input.isContinuepage($"{Fmt.fgMag}Home{Fmt.fgWhi}");
                         break;
                     case 4:
@@ -83,6 +84,32 @@ namespace HomePage.Service
             return serviceCollection.BuildServiceProvider();
         }
 
+        // private static void ConfigureServices(IServiceCollection services)
+        // {
+        //     // Configure Serilog
+        //     Log.Logger = new LoggerConfiguration()
+        //         .MinimumLevel.Information()
+        //         .WriteTo.Console()
+        //         .WriteTo.File("Utils/Logging/log-.log", rollingInterval: RollingInterval.Day)
+        //         .CreateLogger();
+
+        //     // Add logging services
+        //     services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
+
+        //     // Register custom services
+        //     services.AddTransient<Input>();
+        //     services.AddTransient<Guest>(); // Ensure Guest is registered here
+        //     services.AddTransient<FlightBookingConnection>(); 
+
+        //     // Register the dependencies for AdminAuthentication and UserAuthentication
+        //     services.AddTransient<UserAuthentication>(); // No need to manually instantiate
+        //     services.AddTransient<AdminAuthentication>();
+        //     services.AddTransient<InternationalFlights>();
+
+        //     // Register UserOptions service
+        //     services.AddTransient<UserOptions>(); // Ensure UserOptions is added to the DI container
+        // }
+
         private static void ConfigureServices(IServiceCollection services)
         {
             // Configure Serilog
@@ -98,14 +125,18 @@ namespace HomePage.Service
             // Register custom services
             services.AddTransient<Input>();
             services.AddTransient<Guest>(); // Ensure Guest is registered here
-            services.AddTransient<FlightBookingConnection>(); 
+            services.AddTransient<FlightBookingConnection>();
 
             // Register the dependencies for AdminAuthentication and UserAuthentication
             services.AddTransient<UserAuthentication>(); // No need to manually instantiate
             services.AddTransient<AdminAuthentication>();
+            services.AddTransient<InternationalFlights>();
+            services.AddTransient<InternationalFlights>();
+            services.AddTransient<LocalFlights>();
 
             // Register UserOptions service
             services.AddTransient<UserOptions>(); // Ensure UserOptions is added to the DI container
         }
+
     }
 }

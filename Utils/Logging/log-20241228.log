@@ -74,3 +74,104 @@ System.InvalidOperationException: ExecuteReader: Connection property has not bee
 2024-12-28 01:22:11.434 +05:30 [INF] Admin chose to continue: true
 2024-12-28 01:22:13.046 +05:30 [INF] Admin selected option: 8
 2024-12-28 01:22:13.047 +05:30 [INF] Admin logged out successfully.
+2024-12-28 01:29:44.120 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:29:44.154 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:29:44.156 +05:30 [INF] Application Started
+2024-12-28 01:35:20.099 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:35:20.140 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:35:20.142 +05:30 [INF] Application Started
+2024-12-28 01:41:04.302 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:41:04.343 +05:30 [INF] Database connection established successfully.
+2024-12-28 01:41:04.344 +05:30 [INF] Application Started
+2024-12-28 09:40:59.703 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:40:59.738 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:40:59.739 +05:30 [INF] Application Started
+2024-12-28 09:41:21.021 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:41:21.063 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:41:21.064 +05:30 [INF] Application Started
+2024-12-28 09:41:30.877 +05:30 [INF] UserAuthentication process started.
+2024-12-28 09:41:46.502 +05:30 [INF] Fetched data from Users table.
+2024-12-28 09:41:46.505 +05:30 [INF] Checked authentication for user: Harish.Manikam, Success: false
+2024-12-28 09:42:10.903 +05:30 [INF] Fetched data from Users table.
+2024-12-28 09:42:10.907 +05:30 [INF] Checked authentication for user: Harish.Manikam, Success: true
+2024-12-28 09:42:10.908 +05:30 [INF] User authentication status: true
+2024-12-28 09:50:20.419 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:50:20.518 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:50:20.520 +05:30 [INF] Application Started
+2024-12-28 09:59:48.206 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:59:48.256 +05:30 [INF] Database connection established successfully.
+2024-12-28 09:59:48.257 +05:30 [INF] Application Started
+2024-12-28 09:59:52.970 +05:30 [INF] UserAuthentication process started.
+2024-12-28 10:00:21.015 +05:30 [INF] Fetched data from Users table.
+2024-12-28 10:00:21.018 +05:30 [INF] Checked authentication for user: Harish.Manikam, Success: true
+2024-12-28 10:00:21.022 +05:30 [INF] User authentication status: true
+2024-12-28 10:00:23.929 +05:30 [INF] User selected option: 1
+2024-12-28 10:00:26.027 +05:30 [ERR] An error occurred while processing user input.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at System.ThrowHelper.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at HomePage.Service.UserOptions.SelectFlightType() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\UserOptions.cs:line 31
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 70
+2024-12-28 10:00:26.038 +05:30 [INF] UserAuthentication process ended.
+2024-12-28 10:07:38.945 +05:30 [INF] Database connection established successfully.
+2024-12-28 10:07:38.981 +05:30 [INF] Database connection established successfully.
+2024-12-28 10:07:38.982 +05:30 [INF] Application Started
+2024-12-28 10:12:41.915 +05:30 [INF] Database connection established successfully.
+2024-12-28 10:12:41.948 +05:30 [INF] Database connection established successfully.
+2024-12-28 10:12:41.949 +05:30 [INF] Application Started
+2024-12-28 10:12:46.495 +05:30 [INF] User selected Domestic Flight.
+2024-12-28 11:14:09.627 +05:30 [INF] Database connection established successfully.
+2024-12-28 11:14:09.664 +05:30 [INF] Database connection established successfully.
+2024-12-28 11:14:09.665 +05:30 [INF] Application Started
+2024-12-28 11:14:30.031 +05:30 [INF] User selected Domestic Flight.
+2024-12-28 11:14:47.915 +05:30 [INF] User selected International Flight.
+2024-12-28 11:15:27.014 +05:30 [INF] UserAuthentication process started.
+2024-12-28 11:15:44.943 +05:30 [INF] Fetched data from Users table.
+2024-12-28 11:15:44.945 +05:30 [INF] Checked authentication for user: Harish.Manikam, Success: true
+2024-12-28 11:15:44.949 +05:30 [INF] User authentication status: true
+2024-12-28 11:15:46.856 +05:30 [INF] User selected option: 3
+2024-12-28 11:15:49.220 +05:30 [ERR] An error occurred while processing user input.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at System.ThrowHelper.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at HomePage.Service.UserOptions.SelectFlightType() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\UserOptions.cs:line 31
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 84
+2024-12-28 11:15:49.285 +05:30 [INF] UserAuthentication process ended.
+2024-12-28 11:33:59.396 +05:30 [INF] UserAuthentication process started.
+2024-12-28 11:34:32.123 +05:30 [INF] Fetched data from Users table.
+2024-12-28 11:34:32.124 +05:30 [INF] Checked authentication for user: Amar@Mahesh, Success: false
+2024-12-28 11:39:53.057 +05:30 [INF] Fetched data from Users table.
+2024-12-28 11:39:53.058 +05:30 [INF] Checked authentication for user: Amar@CTS, Success: true
+2024-12-28 11:39:53.059 +05:30 [INF] User authentication status: true
+2024-12-28 11:39:56.679 +05:30 [INF] User selected option: 3
+2024-12-28 11:39:58.429 +05:30 [ERR] An error occurred while processing user input.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at System.ThrowHelper.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at HomePage.Service.UserOptions.SelectFlightType() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\UserOptions.cs:line 31
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 84
+2024-12-28 11:39:58.433 +05:30 [INF] UserAuthentication process ended.
+2024-12-28 11:47:31.372 +05:30 [INF] UserAuthentication process started.
+2024-12-28 11:47:42.747 +05:30 [INF] Fetched data from Users table.
+2024-12-28 11:47:42.747 +05:30 [INF] Checked authentication for user: Amar@CTS, Success: true
+2024-12-28 11:47:42.749 +05:30 [INF] User authentication status: true
+2024-12-28 11:47:45.032 +05:30 [INF] User selected option: 3
+2024-12-28 11:48:00.271 +05:30 [ERR] An error occurred while processing user input.
+System.ArgumentNullException: Value cannot be null. (Parameter 'logger')
+   at System.ThrowHelper.Throw(String paramName)
+   at System.ThrowHelper.ThrowIfNull(Object argument, String paramName)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, String message, Object[] args)
+   at Microsoft.Extensions.Logging.LoggerExtensions.LogInformation(ILogger logger, String message, Object[] args)
+   at HomePage.Service.UserOptions.SelectFlightType() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\UserOptions.cs:line 31
+   at HomePage.Service.UserAuthentication.go() in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\User.cs:line 84
+2024-12-28 11:48:00.274 +05:30 [INF] UserAuthentication process ended.
