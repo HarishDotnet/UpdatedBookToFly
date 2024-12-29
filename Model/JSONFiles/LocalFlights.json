@@ -108,15 +108,6 @@
     "SeatAvailability": 45
   },
   {
-    "FlightNumber": "LF116",
-    "FlightName": "AirRide",
-    "From": "Trichy",
-    "To": "Chennai",
-    "Time": "3.00 AM",
-    "Price": 3200,
-    "SeatAvailability": 40
-  },
-  {
     "FlightNumber": "LF111",
     "FlightName": "HarishFly",
     "From": "Erode",
@@ -124,5 +115,14 @@
     "Time": "8:45 PM",
     "Price": 1000,
     "SeatAvailability": 7
+  },
+  {
+    "FlightNumber": "LF116",
+    "FlightName": "AirRide",
+    "From": "Trichy",
+    "To": "Chennai",
+    "Time": "3.00 AM",
+    "Price": 3200,
+    "SeatAvailability": 39
   }
 ]

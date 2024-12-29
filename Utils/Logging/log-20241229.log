@@ -1,0 +1,111 @@
+2024-12-29 14:36:41.490 +05:30 [INF] Database connection established successfully.
+2024-12-29 14:36:41.568 +05:30 [INF] Database connection established successfully.
+2024-12-29 14:36:41.569 +05:30 [INF] Application Started
+2024-12-29 14:37:48.497 +05:30 [INF] UserAuthentication process started.
+2024-12-29 14:38:08.165 +05:30 [INF] Checked for duplicate username: Ram&Seetha, Found: false
+2024-12-29 14:38:54.054 +05:30 [ERR] Error while adding user details for Ram&Seetha.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Procedure or function 'SetDetail' expects parameter '@TableName', which was not supplied.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at HomePage.Service.FlightBookingDB.FlightBookingConnection.AddDetails(String username, String password, Object authObject) in C:\Users\harish.muthu\Desktop\Flight Booking Console Aplication\HomePage\Service\FlightBookingDB\SqlConnection.cs:line 48
+ClientConnectionId:86a8e94c-c17b-4f95-843a-4a85062a9bf3
+Error Number:201,State:4,Class:16
+2024-12-29 14:43:02.854 +05:30 [INF] Database connection established successfully.
+2024-12-29 14:43:02.892 +05:30 [INF] Database connection established successfully.
+2024-12-29 14:43:02.892 +05:30 [INF] Application Started
+2024-12-29 14:43:06.555 +05:30 [INF] UserAuthentication process started.
+2024-12-29 14:43:17.936 +05:30 [INF] Checked for duplicate username: Ram_Seetha, Found: false
+2024-12-29 14:43:36.129 +05:30 [INF] User details added successfully for Ram_Seetha.
+2024-12-29 14:46:39.314 +05:30 [INF] Database connection established successfully.
+2024-12-29 14:46:39.376 +05:30 [INF] Database connection established successfully.
+2024-12-29 14:46:39.378 +05:30 [INF] Application Started
+2024-12-29 14:46:43.567 +05:30 [INF] UserAuthentication process started.
+2024-12-29 14:47:06.587 +05:30 [INF] Checked for duplicate username: Vinotha&Gokul, Found: false
+2024-12-29 14:47:25.621 +05:30 [INF] User details added successfully for Vinotha&Gokul.
+2024-12-29 14:48:01.469 +05:30 [INF] Fetched data from Users table.
+2024-12-29 14:48:01.471 +05:30 [INF] Checked authentication for user: Vinotha&Gokul, Success: true
+2024-12-29 14:48:01.472 +05:30 [INF] User authentication status: true
+2024-12-29 14:48:14.762 +05:30 [INF] User selected option: 3
+2024-12-29 14:48:20.921 +05:30 [INF] selected International Flight.
+2024-12-29 14:48:21.014 +05:30 [INF] User initiated booking for flight type: InternationalFlights
+2024-12-29 14:49:42.836 +05:30 [INF] Booking successful for flight IF121. Seats left: 25
+2024-12-29 14:49:42.887 +05:30 [INF] Booking ID: BTF07, Passenger: Vinotha, Age: 30, Date: 10-08-2025, Flight Number: IF121
+2024-12-29 14:49:53.400 +05:30 [INF] User chose to continue: true
+2024-12-29 14:49:55.831 +05:30 [INF] User selected option: 4
+2024-12-29 14:50:10.122 +05:30 [INF] User requested ticket preview for Booking ID: BTF07
+2024-12-29 15:03:56.462 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:03:56.508 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:03:56.509 +05:30 [INF] Application Started
+2024-12-29 15:04:08.419 +05:30 [INF] UserAuthentication process started.
+2024-12-29 15:04:34.428 +05:30 [INF] Fetched data from Users table.
+2024-12-29 15:04:34.431 +05:30 [INF] Checked authentication for user: Vinotha&Gokul, Success: true
+2024-12-29 15:04:34.434 +05:30 [INF] User authentication status: true
+2024-12-29 15:04:36.782 +05:30 [INF] User selected option: 3
+2024-12-29 15:04:50.634 +05:30 [INF] selected Domestic Flight.
+2024-12-29 15:04:50.705 +05:30 [INF] User initiated booking for flight type: LocalFlights
+2024-12-29 15:05:57.064 +05:30 [INF] Booking successful for flight LF116. Seats left: 39
+2024-12-29 15:05:57.106 +05:30 [INF] Booking ID: BTF09, Passenger: Vinotha, Age: 30, Date: 10-08-2025, Flight Number: LF116
+2024-12-29 15:07:31.124 +05:30 [INF] User chose to continue: true
+2024-12-29 15:07:33.824 +05:30 [INF] User selected option: 4
+2024-12-29 15:07:48.310 +05:30 [INF] User requested ticket preview for Booking ID: BTF09
+2024-12-29 15:13:46.400 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:13:46.481 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:13:46.482 +05:30 [INF] Application Started
+2024-12-29 15:13:55.648 +05:30 [INF] AdminAuthentication process started.
+2024-12-29 15:14:09.960 +05:30 [INF] Fetched data from Admins table.
+2024-12-29 15:14:09.963 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-29 15:14:14.242 +05:30 [INF] Admin selected option: 5
+2024-12-29 15:14:45.283 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:14:45.318 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:14:45.320 +05:30 [INF] Application Started
+2024-12-29 15:14:49.213 +05:30 [INF] AdminAuthentication process started.
+2024-12-29 15:14:58.165 +05:30 [INF] Fetched data from Admins table.
+2024-12-29 15:14:58.169 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-29 15:15:04.150 +05:30 [INF] Admin selected option: 5
+2024-12-29 15:21:13.147 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:21:13.195 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:21:13.197 +05:30 [INF] Application Started
+2024-12-29 15:21:24.273 +05:30 [INF] AdminAuthentication process started.
+2024-12-29 15:21:40.378 +05:30 [INF] Fetched data from Admins table.
+2024-12-29 15:21:40.382 +05:30 [INF] Checked authentication for user: , Success: false
+2024-12-29 15:21:52.167 +05:30 [INF] Fetched data from Admins table.
+2024-12-29 15:21:52.169 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-29 15:21:56.330 +05:30 [INF] Admin selected option: 5
+2024-12-29 15:26:20.677 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:26:20.710 +05:30 [INF] Application Started
+2024-12-29 15:26:26.073 +05:30 [INF] UserAuthentication process started.
+2024-12-29 15:26:46.087 +05:30 [INF] Fetched data from Users table.
+2024-12-29 15:26:46.090 +05:30 [INF] Checked authentication for user: Harish.Manikam, Success: true
+2024-12-29 15:26:46.092 +05:30 [INF] User authentication status: true
+2024-12-29 15:26:49.117 +05:30 [INF] User selected option: 5
+2024-12-29 15:26:49.118 +05:30 [INF] User logged out successfully.
+2024-12-29 15:26:56.725 +05:30 [INF] AdminAuthentication process started.
+2024-12-29 15:27:05.482 +05:30 [INF] Fetched data from Admins table.
+2024-12-29 15:27:05.483 +05:30 [INF] Checked authentication for user: Admin, Success: true
+2024-12-29 15:27:10.528 +05:30 [INF] Admin selected option: 8
+2024-12-29 15:27:10.529 +05:30 [INF] Admin logged out successfully.
+2024-12-29 15:27:18.856 +05:30 [INF] Application Ended.
+ ----------------------------------------------------------------------------------------------------
+2024-12-29 15:43:01.090 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:43:01.142 +05:30 [INF] Application Started
+2024-12-29 15:43:06.813 +05:30 [INF] UserAuthentication process started.
+2024-12-29 15:43:16.690 +05:30 [INF] Checked for duplicate username: Harish_Manikam, Found: false
+2024-12-29 15:43:31.806 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:43:31.862 +05:30 [INF] Application Started
+2024-12-29 15:43:35.332 +05:30 [INF] UserAuthentication process started.
+2024-12-29 15:43:43.679 +05:30 [INF] Checked for duplicate username: Harish_Manikam, Found: false
+2024-12-29 15:43:53.736 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:43:53.788 +05:30 [INF] Application Started
+2024-12-29 15:43:56.581 +05:30 [INF] UserAuthentication process started.
+2024-12-29 15:44:04.512 +05:30 [INF] Checked for duplicate username: Harish_Manikam, Found: false
+2024-12-29 15:45:08.338 +05:30 [INF] Database connection established successfully.
+2024-12-29 15:45:08.413 +05:30 [INF] Application Started
+2024-12-29 15:45:12.481 +05:30 [INF] UserAuthentication process started.
+2024-12-29 15:45:13.275 +05:30 [INF] Checked for duplicate username: Harish.Manikam, Found: true

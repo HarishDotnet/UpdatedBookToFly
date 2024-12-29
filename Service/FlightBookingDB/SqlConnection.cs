@@ -2,6 +2,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using HomePage.Service;
+using System.Data;
 
 namespace HomePage.Service.FlightBookingDB
 {
@@ -37,11 +38,14 @@ namespace HomePage.Service.FlightBookingDB
         public void AddDetails(string username, string password, object authObject)
         {
             string tableName = authObject is AdminAuthentication ? "Admins" : "Users";
-            string query = $"INSERT INTO {tableName} (Username, Password) VALUES (@Username, @Password)";
+            string query = "SetDetail";
             try
             {
                 using (var command = new SqlCommand(query, connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure; 
+                    
+                    command.Parameters.AddWithValue("@TableName", tableName);
                     command.Parameters.AddWithValue("@Username", username);
                     command.Parameters.AddWithValue("@Password", password);
                     command.ExecuteNonQuery();
@@ -56,10 +60,11 @@ namespace HomePage.Service.FlightBookingDB
 
         public void DisplayUserName()
         {
-            string query = "SELECT Username FROM Users"; // Adjust the table and column names as needed
+            string query = "GetUserNames"; // Adjust the table and column names as needed
             try
             {
                 SqlCommand command = new SqlCommand(query, connection);
+                command.CommandType=CommandType.StoredProcedure;
                 SqlDataReader reader = command.ExecuteReader();
                 int i = 1;
                 while (reader.Read())
@@ -78,11 +83,13 @@ namespace HomePage.Service.FlightBookingDB
         public bool isDuplicate(string username, object authObject)
         {
             string tableName = authObject is AdminAuthentication ? "Admins" : "Users";
-            string query = $"SELECT COUNT(*) FROM {tableName} WHERE Username = @Username";
+            string query = "GetCountOfUser";
             try
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.CommandType=CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@TableName",tableName);
                     command.Parameters.AddWithValue("@Username", username);
                     int count = (int)command.ExecuteScalar();
                     bool isDuplicate = count > 0;
@@ -100,12 +107,14 @@ namespace HomePage.Service.FlightBookingDB
         public Dictionary<string, string> getDataFromDB(string tableName)
         {
             Dictionary<string, string> userData = new Dictionary<string, string>();
-            string query = $"SELECT * FROM {tableName}";
+            string query = "GetDetails";
 
             try
             {
                 using (var command = new SqlCommand(query, connection))
                 {
+                    command.CommandType=CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@TableName", tableName);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {

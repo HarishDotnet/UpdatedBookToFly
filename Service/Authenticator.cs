@@ -63,7 +63,7 @@ namespace HomePage.Service
             Console.WriteLine($"\n\t\t{Fmt.b}Your UserName is : {Fmt.fgGre}{userName}{Fmt.fgWhi}{Fmt._b}");
             Thread.Sleep(3000);
             _flightBookingConnection.AddDetails(userName,password,this);
-            return this.Begin();
+            return this.Login();
         }
 
         public bool Login()

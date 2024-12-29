@@ -3,49 +3,225 @@
     "PassengerName": "Mani",
     "Age": 18,
     "Date": "23-12-2024",
-    "FlightNumber": "LF108",
+    "FlightDetails": {
+      "FlightNumber": "LF102",
+      "FlightName": "IndiGo",
+      "From": "Bangalore",
+      "To": "Hyderabad",
+      "Time": "11:00 AM",
+      "Price": 3200,
+      "SeatAvailability": 30
+    },
     "BookingId": "BTF01"
   },
   "BTF02": {
     "PassengerName": "harish",
     "Age": 21,
     "Date": "12-12-2024",
-    "FlightNumber": "LF108",
+    "FlightDetails": {
+      "FlightNumber": "LF103",
+      "FlightName": "SpiceJet",
+      "From": "Chennai",
+      "To": "Kolkata",
+      "Time": "2:00 PM",
+      "Price": 4000,
+      "SeatAvailability": 25
+    },
     "BookingId": "BTF02"
   },
   "BTF03": {
     "PassengerName": "hari",
     "Age": 32,
     "Date": "26-07-2024",
-    "FlightNumber": "LF104",
+    "FlightDetails": {
+      "FlightNumber": "LF104",
+      "FlightName": "GoAir",
+      "From": "Pune",
+      "To": "Ahmedabad",
+      "Time": "6:30 PM",
+      "Price": 2800,
+      "SeatAvailability": 40
+    },
     "BookingId": "BTF03"
   },
   "BTF04": {
     "PassengerName": "RajaLakshmi",
     "Age": 30,
     "Date": "02-08-1900",
-    "FlightNumber": "IF103",
+    "FlightDetails": {
+      "FlightNumber": "LF105",
+      "FlightName": "Vistara",
+      "From": "Delhi",
+      "To": "Lucknow",
+      "Time": "8:45 AM",
+      "Price": 2400,
+      "SeatAvailability": 20
+    },
     "BookingId": "BTF04"
   },
   "BTF08": {
     "PassengerName": "Gayathri",
     "Age": 24,
     "Date": "06-08-2025",
-    "FlightNumber": "IF104",
+    "FlightDetails": {
+      "FlightNumber": "LF106",
+      "FlightName": "AirAsia",
+      "From": "Mumbai",
+      "To": "Goa",
+      "Time": "4:00 PM",
+      "Price": 3500,
+      "SeatAvailability": 35
+    },
     "BookingId": "BTF08"
   },
   "BTF05": {
     "PassengerName": "Amar",
     "Age": 22,
     "Date": "14-01-2025",
-    "FlightNumber": "IF117",
+    "FlightDetails": {
+      "FlightNumber": "LF107",
+      "FlightName": "Alliance Air",
+      "From": "Kochi",
+      "To": "Trivandrum",
+      "Time": "10:30 AM",
+      "Price": 1500,
+      "SeatAvailability": 10
+    },
     "BookingId": "BTF05"
   },
   "BTF06": {
     "PassengerName": "Srikanth",
     "Age": 23,
     "Date": "27-03-2025",
-    "FlightNumber": "LF111",
+    "FlightDetails": {
+      "FlightNumber": "LF108",
+      "FlightName": "TruJet",
+      "From": "Jaipur",
+      "To": "Udaipur",
+      "Time": "3:00 PM",
+      "Price": 2000,
+      "SeatAvailability": 15
+    },
     "BookingId": "BTF06"
+  },
+  "BTF07": {
+    "PassengerName": "Vinotha",
+    "Age": 30,
+    "Date": "10-08-2025",
+    "FlightDetails": {
+      "FlightNumber": "LF109",
+      "FlightName": "Star Air",
+      "From": "Bhopal",
+      "To": "Indore",
+      "Time": "12:00 PM",
+      "Price": 1800,
+      "SeatAvailability": 5
+    },
+    "BookingId": "BTF07"
+  },
+  "BTF09": {
+    "PassengerName": "Vinotha",
+    "Age": 30,
+    "Date": "10-08-2025",
+    "FlightDetails": {
+      "FlightNumber": "LF116",
+      "FlightName": "AirRide",
+      "From": "Trichy",
+      "To": "Chennai",
+      "Time": "3:00 AM",
+      "Price": 3200,
+      "SeatAvailability": 39
+    },
+    "BookingId": "BTF09"
+  },
+  "BTF10": {
+    "PassengerName": "Alex",
+    "Age": 25,
+    "Date": "12-01-2025",
+    "FlightDetails": {
+      "FlightNumber": "IF101",
+      "FlightName": "Skyline Airways",
+      "From": "New York",
+      "To": "Los Angeles",
+      "Time": "10:00 AM",
+      "Price": 30000,
+      "SeatAvailability": 75
+    },
+    "BookingId": "BTF10"
+  },
+  "BTF11": {
+    "PassengerName": "Oliver",
+    "Age": 28,
+    "Date": "20-02-2025",
+    "FlightDetails": {
+      "FlightNumber": "IF103",
+      "FlightName": "Aussie Express",
+      "From": "Sydney",
+      "To": "Melbourne",
+      "Time": "5:00 PM",
+      "Price": 10000,
+      "SeatAvailability": 90
+    },
+    "BookingId": "BTF11"
+  },
+  "BTF12": {
+    "PassengerName": "Sophie",
+    "Age": 32,
+    "Date": "15-03-2025",
+    "FlightDetails": {
+      "FlightNumber": "IF106",
+      "FlightName": "Pacific Breeze",
+      "From": "San Francisco",
+      "To": "Honolulu",
+      "Time": "4:15 PM",
+      "Price": 35000,
+      "SeatAvailability": 80
+    },
+    "BookingId": "BTF12"
+  },
+  "BTF13": {
+    "PassengerName": "Mia",
+    "Age": 30,
+    "Date": "17-04-2025",
+    "FlightDetails": {
+      "FlightNumber": "IF108",
+      "FlightName": "Golden Route",
+      "From": "Singapore",
+      "To": "Bangkok",
+      "Time": "3:20 PM",
+      "Price": 18000,
+      "SeatAvailability": 55
+    },
+    "BookingId": "BTF13"
+  },
+  "BTF14": {
+    "PassengerName": "Liam",
+    "Age": 35,
+    "Date": "05-05-2025",
+    "FlightDetails": {
+      "FlightNumber": "IF109",
+      "FlightName": "Polar Air",
+      "From": "Reykjavik",
+      "To": "Oslo",
+      "Time": "6:00 AM",
+      "Price": 25000,
+      "SeatAvailability": 25
+    },
+    "BookingId": "BTF14"
+  },
+  "BTF15": {
+    "PassengerName": "Noah",
+    "Age": 29,
+    "Date": "22-06-2025",
+    "FlightDetails": {
+      "FlightNumber": "IF111",
+      "FlightName": "Arctic Wings",
+      "From": "Anchorage",
+      "To": "Seattle",
+      "Time": "7:45 AM",
+      "Price": 22000,
+      "SeatAvailability": 40
+    },
+    "BookingId": "BTF15"
   }
 }
